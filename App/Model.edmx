@@ -24,10 +24,6 @@
             <End Role="Compra" EntitySet="Compras" />
           </AssociationSet>
           <EntitySet Name="DetalhesCompras" EntityType="Model.DetalheCompra" />
-          <AssociationSet Name="CompraDetalheCompra" Association="Model.CompraDetalheCompra">
-            <End Role="Compra" EntitySet="Compras" />
-            <End Role="DetalheCompra" EntitySet="DetalhesCompras" />
-          </AssociationSet>
           <EntitySet Name="Produtoes" EntityType="Model.Produto" />
           <AssociationSet Name="ProdutoDetalheCompra" Association="Model.ProdutoDetalheCompra">
             <End Role="Produto" EntitySet="Produtoes" />
@@ -66,6 +62,16 @@
             <End Role="Evento" EntitySet="Eventoes" />
             <End Role="Participação" EntitySet="Participação" />
           </AssociationSet>
+          <AssociationSet Name="CompraDetalheCompra" Association="Model.CompraDetalheCompra">
+            <End Role="Compra" EntitySet="Compras" />
+            <End Role="DetalheCompra" EntitySet="DetalhesCompras" />
+          </AssociationSet>
+          <EntitySet Name="TipoProdutos" EntityType="Model.TipoProduto" />
+          <AssociationSet Name="TipoProdutoProduto" Association="Model.TipoProdutoProduto">
+            <End Role="TipoProduto" EntitySet="TipoProdutos" />
+            <End Role="Produto" EntitySet="Produtoes" />
+          </AssociationSet>
+          <EntitySet Name="Users" EntityType="Model.User" />
         </EntityContainer>
         <EntityType Name="Pessoa">
           <Key>
@@ -132,27 +138,15 @@
         </Association>
         <EntityType Name="DetalheCompra" >
           <Key>
-            <PropertyRef Name="CompraNrCompra" />
             <PropertyRef Name="ProdutoCodProduto" />
+            <PropertyRef Name="CompraNrCompra1" />
           </Key>
-          <NavigationProperty Name="ComprasNrCompra" Relationship="Model.CompraDetalheCompra" FromRole="DetalheCompra" ToRole="Compra" />
-          <Property Name="CompraNrCompra" Type="Int32" Nullable="false" />
           <Property Name="Quantidade" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Produtos" Relationship="Model.ProdutoDetalheCompra" FromRole="DetalheCompra" ToRole="Produto" />
           <Property Name="ProdutoCodProduto" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Compras" Relationship="Model.CompraDetalheCompra" FromRole="DetalheCompra" ToRole="Compra" />
+          <Property Name="CompraNrCompra1" Type="Int32" Nullable="false" />
         </EntityType>
-        <Association Name="CompraDetalheCompra">
-          <End Type="Model.Compra" Role="Compra" Multiplicity="1" />
-          <End Type="Model.DetalheCompra" Role="DetalheCompra" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Compra">
-              <PropertyRef Name="NrCompra" />
-            </Principal>
-            <Dependent Role="DetalheCompra">
-              <PropertyRef Name="CompraNrCompra" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Produto">
           <Key>
             <PropertyRef Name="CodProduto" />
@@ -162,6 +156,8 @@
           <Property Name="Preço" Type="Double" Nullable="false" />
           <Property Name="StockExistente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DetalhesCompras" Relationship="Model.ProdutoDetalheCompra" FromRole="Produto" ToRole="DetalheCompra" />
+          <NavigationProperty Name="TipoProduto" Relationship="Model.TipoProdutoProduto" FromRole="Produto" ToRole="TipoProduto" />
+          <Property Name="TipoProdutoCodTipoProduto" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="ProdutoDetalheCompra">
           <End Type="Model.Produto" Role="Produto" Multiplicity="1" />
@@ -293,6 +289,7 @@
         <EntityType Name="Participação" >
           <Key>
             <PropertyRef Name="EscolaIdEscola" />
+            <PropertyRef Name="EventoNrEvento" />
           </Key>
           <NavigationProperty Name="Escolas" Relationship="Model.EscolaParticipação" FromRole="Participação" ToRole="Escola" />
           <Property Name="EscolaIdEscola" Type="Int32" Nullable="false" />
@@ -323,6 +320,46 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="CompraDetalheCompra">
+          <End Type="Model.Compra" Role="Compra" Multiplicity="1" />
+          <End Type="Model.DetalheCompra" Role="DetalheCompra" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Compra">
+              <PropertyRef Name="NrCompra" />
+            </Principal>
+            <Dependent Role="DetalheCompra">
+              <PropertyRef Name="CompraNrCompra1" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TipoProduto">
+          <Key>
+            <PropertyRef Name="CodTipoProduto" />
+          </Key>
+          <Property Name="CodTipoProduto" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Tipo" Type="String" Nullable="false" />
+          <NavigationProperty Name="Produtos" Relationship="Model.TipoProdutoProduto" FromRole="TipoProduto" ToRole="Produto" />
+        </EntityType>
+        <Association Name="TipoProdutoProduto">
+          <End Type="Model.TipoProduto" Role="TipoProduto" Multiplicity="1" />
+          <End Type="Model.Produto" Role="Produto" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TipoProduto">
+              <PropertyRef Name="CodTipoProduto" />
+            </Principal>
+            <Dependent Role="Produto">
+              <PropertyRef Name="TipoProdutoCodTipoProduto" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" />
+          <Property Name="Pass" Type="String" Nullable="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
