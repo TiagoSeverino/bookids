@@ -45,5 +45,10 @@ namespace Bookids
         {
             new FormGestãoAnimadores().ShowDialog();
         }
+
+        private void BtnGestãoDeProdutos_Click(object sender, EventArgs e)
+        {
+            new FormGestãoProdutos().ShowDialog();
+        }
     }
 }

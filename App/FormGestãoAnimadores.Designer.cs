@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.especialidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idPessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.animadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new Bookids.DatabaseDataSet();
             this.tbNome = new System.Windows.Forms.TextBox();
@@ -49,14 +51,12 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.animadoresTableAdapter = new Bookids.DatabaseDataSetTableAdapters.EscolasTableAdapter();
-            this.especialidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idPessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pessoas_AnimadorTableAdapter = new Bookids.DatabaseDataSetTableAdapters.Pessoas_AnimadorTableAdapter();
-            this.tbEspecialidade = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
             this.tbTelemovel = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.tbEspecialidade = new System.Windows.Forms.TextBox();
+            this.animadoresTableAdapter = new Bookids.DatabaseDataSetTableAdapters.EscolasTableAdapter();
+            this.pessoas_AnimadorTableAdapter = new Bookids.DatabaseDataSetTableAdapters.Pessoas_AnimadorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -82,6 +82,24 @@
             this.dataGridView1.Size = new System.Drawing.Size(367, 800);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
+            // 
+            // especialidadeDataGridViewTextBoxColumn
+            // 
+            this.especialidadeDataGridViewTextBoxColumn.DataPropertyName = "Especialidade";
+            this.especialidadeDataGridViewTextBoxColumn.HeaderText = "Especialidade";
+            this.especialidadeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.especialidadeDataGridViewTextBoxColumn.Name = "especialidadeDataGridViewTextBoxColumn";
+            this.especialidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.especialidadeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idPessoaDataGridViewTextBoxColumn
+            // 
+            this.idPessoaDataGridViewTextBoxColumn.DataPropertyName = "IdPessoa";
+            this.idPessoaDataGridViewTextBoxColumn.HeaderText = "IdPessoa";
+            this.idPessoaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idPessoaDataGridViewTextBoxColumn.Name = "idPessoaDataGridViewTextBoxColumn";
+            this.idPessoaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idPessoaDataGridViewTextBoxColumn.Width = 150;
             // 
             // animadoresBindingSource
             // 
@@ -216,7 +234,7 @@
             this.groupBox1.Size = new System.Drawing.Size(490, 541);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Escola";
+            this.groupBox1.Text = "Animadores";
             // 
             // btnAdicionar
             // 
@@ -258,39 +276,6 @@
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
-            // animadoresTableAdapter
-            // 
-            this.animadoresTableAdapter.ClearBeforeFill = true;
-            // 
-            // especialidadeDataGridViewTextBoxColumn
-            // 
-            this.especialidadeDataGridViewTextBoxColumn.DataPropertyName = "Especialidade";
-            this.especialidadeDataGridViewTextBoxColumn.HeaderText = "Especialidade";
-            this.especialidadeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.especialidadeDataGridViewTextBoxColumn.Name = "especialidadeDataGridViewTextBoxColumn";
-            this.especialidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.especialidadeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // idPessoaDataGridViewTextBoxColumn
-            // 
-            this.idPessoaDataGridViewTextBoxColumn.DataPropertyName = "IdPessoa";
-            this.idPessoaDataGridViewTextBoxColumn.HeaderText = "IdPessoa";
-            this.idPessoaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idPessoaDataGridViewTextBoxColumn.Name = "idPessoaDataGridViewTextBoxColumn";
-            this.idPessoaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idPessoaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // pessoas_AnimadorTableAdapter
-            // 
-            this.pessoas_AnimadorTableAdapter.ClearBeforeFill = true;
-            // 
-            // tbEspecialidade
-            // 
-            this.tbEspecialidade.Location = new System.Drawing.Point(139, 282);
-            this.tbEspecialidade.Name = "tbEspecialidade";
-            this.tbEspecialidade.Size = new System.Drawing.Size(333, 26);
-            this.tbEspecialidade.TabIndex = 2;
-            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -299,6 +284,13 @@
             this.label7.Size = new System.Drawing.Size(108, 20);
             this.label7.TabIndex = 3;
             this.label7.Text = "Especialidade";
+            // 
+            // tbTelemovel
+            // 
+            this.tbTelemovel.Location = new System.Drawing.Point(117, 154);
+            this.tbTelemovel.Name = "tbTelemovel";
+            this.tbTelemovel.Size = new System.Drawing.Size(355, 26);
+            this.tbTelemovel.TabIndex = 2;
             // 
             // label8
             // 
@@ -309,12 +301,20 @@
             this.label8.TabIndex = 3;
             this.label8.Text = "Telemovel";
             // 
-            // tbTelemovel
+            // tbEspecialidade
             // 
-            this.tbTelemovel.Location = new System.Drawing.Point(117, 154);
-            this.tbTelemovel.Name = "tbTelemovel";
-            this.tbTelemovel.Size = new System.Drawing.Size(355, 26);
-            this.tbTelemovel.TabIndex = 2;
+            this.tbEspecialidade.Location = new System.Drawing.Point(139, 282);
+            this.tbEspecialidade.Name = "tbEspecialidade";
+            this.tbEspecialidade.Size = new System.Drawing.Size(333, 26);
+            this.tbEspecialidade.TabIndex = 2;
+            // 
+            // animadoresTableAdapter
+            // 
+            this.animadoresTableAdapter.ClearBeforeFill = true;
+            // 
+            // pessoas_AnimadorTableAdapter
+            // 
+            this.pessoas_AnimadorTableAdapter.ClearBeforeFill = true;
             // 
             // FormGestãoAnimadores
             // 
