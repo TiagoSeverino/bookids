@@ -90,7 +90,7 @@ namespace Bookids
 
                 clearTextBoxesProdutos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -120,7 +120,7 @@ namespace Bookids
 
                 clearTextBoxesProdutos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -138,7 +138,7 @@ namespace Bookids
 
                 clearTextBoxesProdutos();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
 
             }
@@ -244,7 +244,7 @@ namespace Bookids
 
                 clearTextBoxesTipoProdutos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -274,7 +274,7 @@ namespace Bookids
 
                 clearTextBoxesTipoProdutos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

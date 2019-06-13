@@ -133,7 +133,7 @@ namespace Bookids
 
                 clearTextBoxesClientes();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -168,7 +168,7 @@ namespace Bookids
 
                 clearTextBoxesClientes();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -198,7 +198,7 @@ namespace Bookids
 
                 clearTextBoxesClientes();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
 
             }
@@ -339,7 +339,7 @@ namespace Bookids
 
                 clearTextBoxesFilhos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -358,7 +358,7 @@ namespace Bookids
 
                 clearTextBoxesFilhos();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }

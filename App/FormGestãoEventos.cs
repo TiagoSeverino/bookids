@@ -29,7 +29,12 @@ namespace Bookids
 
         private void FormGestãoEventos_Load(object sender, EventArgs e)
         {
+            var animadores = from animador in modelContainer.Animadores
+                             select animador;
 
+            cbAnimadores.DataSource = animadores.ToList();
+            cbAnimadores.DisplayMember = "Especialidade";
+            cbAnimadores.ValueMember = "IdPessoa";
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -49,9 +54,22 @@ namespace Bookids
                 nmSuperior.Value = evento.IdadeSuperior;
                 tbTipoEvento.Text = evento.TipoEvento;
 
+                var listaColaborações = from colaboracao in modelContainer.Colaboração
+                                        join animador in modelContainer.Animadores
+                                        on colaboracao.AnimadorIdPessoa equals animador.IdPessoa
+                                        where colaboracao.EventoNrEvento == evento.NrEvento
+                                        select new { Nome = animador.Nome, Especialidade = animador.Especialidade, IdPessoa = colaboracao.AnimadorIdPessoa, IdEvento = colaboracao.EventoNrEvento };
+
+                dataGridView2.DataSource = listaColaborações.ToList();
+
                 isEditing = true;
                 updateLayout();
             }
+        }
+        private void DataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+                dataGridView2.CurrentRow.Selected = true;
         }
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
@@ -68,7 +86,7 @@ namespace Bookids
                 IdadeSuperior = (int)nmSuperior.Value,
                 IdadeInferior = (int)nmInferior.Value,
                 TipoEvento = tbTipoEvento.Text
-        };
+            };
 
             modelContainer.Eventoes.Add(evento);
             modelContainer.SaveChanges();
@@ -86,7 +104,7 @@ namespace Bookids
 
                 Evento ev = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
 
- 
+
                 var evento = (from eventos in modelContainer.Eventoes
                               where eventos.NrEvento == ev.NrEvento
                               select eventos).FirstOrDefault();
@@ -104,7 +122,7 @@ namespace Bookids
 
                 clearTextBoxes();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -122,7 +140,7 @@ namespace Bookids
 
                 clearTextBoxes();
             }
-            catch(Exception ex)
+            catch (Exception)
             {
 
             }
@@ -149,6 +167,8 @@ namespace Bookids
             btnGuardar.Enabled = isEditing;
             btnEliminar.Enabled = isEditing;
             btnCancelar.Enabled = isEditing;
+
+            groupBox2.Enabled = isEditing;
         }
 
         private void clearTextBoxes()
@@ -161,6 +181,9 @@ namespace Bookids
             nmSuperior.Value = 0;
             nmInferior.Value = 0;
             tbTipoEvento.Text = "";
+
+            cbAnimadores.SelectedIndex = -1;
+            dataGridView2.DataSource = null;
 
             isEditing = false;
 
@@ -216,5 +239,52 @@ namespace Bookids
 
             return true;
         }
+
+        private void BtnAdicionarColaborador_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbAnimadores.SelectedIndex == -1)
+                    return;
+
+                Evento evento = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
+
+                Colaboração colaboração = new Colaboração
+                {
+                    EventoNrEvento = evento.NrEvento,
+                    AnimadorIdPessoa = (int)cbAnimadores.SelectedValue
+                };
+
+                modelContainer.Colaboração.Add(colaboração);
+                modelContainer.SaveChanges();
+                carregarEventos();
+                clearTextBoxes();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnRemoverColaborador_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idPessoa = (int)dataGridView2.SelectedRows[0].Cells[2].Value;
+                int nrEvento = (int)dataGridView2.SelectedRows[0].Cells[3].Value;
+
+                Colaboração colab = modelContainer.Colaboração.Where(x => x.AnimadorIdPessoa == idPessoa && x.EventoNrEvento == nrEvento).FirstOrDefault();
+                modelContainer.Colaboração.Remove(colab);
+                modelContainer.SaveChanges();
+                carregarEventos();
+
+                clearTextBoxes();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
     }
 }

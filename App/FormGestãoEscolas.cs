@@ -100,7 +100,7 @@ namespace Bookids
 
                 clearTextBoxes();
             }
-            catch (Exception ex)
+            catch (Exception)
             {
 
             }
@@ -130,7 +130,7 @@ namespace Bookids
 
                 clearTextBoxes();
             }
-            catch(Exception ex)
+            catch(Exception)
             {
 
             }
