@@ -111,6 +111,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValid())
+                    return;
+
                 Cliente cliente = new Cliente
                 {
                     Nome = tbNome.Text,
@@ -140,6 +143,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValid())
+                    return;
+
                 Cliente cl = (Cliente)dataGridView1.SelectedRows[0].DataBoundItem;
 
  
@@ -277,6 +283,9 @@ namespace Bookids
 
         private void BtnAdicionar1_Click(object sender, EventArgs e)
         {
+            if (!InputValidFilho())
+                return;
+
             Filho filho = new Filho
             {
                 Nome = tbNomeFilho.Text,
@@ -303,6 +312,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValidFilho())
+                    return;
+
                 Filho f = (Filho)dataGridView2.SelectedRows[0].DataBoundItem;
 
 
@@ -355,6 +367,87 @@ namespace Bookids
         private void BtnCancelar1_Click(object sender, EventArgs e)
         {
             clearTextBoxesFilhos();
+        }
+
+        private bool InputValid()
+        {
+            if (tbNome.Text == "")
+            {
+                MessageBox.Show("Insira o nome do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbMorada.Text == "")
+            {
+                MessageBox.Show("Insira a morada do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbTelefone.Text == "")
+            {
+                MessageBox.Show("Insira o telefone do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbTelemovel.Text == "")
+            {
+                MessageBox.Show("Insira o telemovel do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbMail.Text == "")
+            {
+                MessageBox.Show("Insira o email do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbCodPostal.Text == "")
+            {
+                MessageBox.Show("Insira o código de postal do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbLocalidade.Text == "")
+            {
+                MessageBox.Show("Insira a localidade do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbOferta.Text == "")
+            {
+                MessageBox.Show("Insira o valor de oferta do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbNrCartao.Text == "")
+            {
+                MessageBox.Show("Insira o número do cartão do cliente", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool InputValidFilho()
+        {
+            if (tbNomeFilho.Text == "")
+            {
+                MessageBox.Show("Insira o nome do filho", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (comboBox1.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione o pai do filho", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (comboBox2.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione a escola do filho", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

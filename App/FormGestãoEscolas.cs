@@ -54,6 +54,9 @@ namespace Bookids
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
+            if (!InputValid())
+                return;
+
             Escola escola = new Escola
             {
                 Nome = tbNome.Text,
@@ -75,6 +78,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValid())
+                    return;
+
                 Escola esc = (Escola)dataGridView1.SelectedRows[0].DataBoundItem;
 
  
@@ -165,6 +171,47 @@ namespace Bookids
             isEditing = false;
 
             updateLayout();
+        }
+
+        private bool InputValid()
+        {
+            if (tbNome.Text == "")
+            {
+                MessageBox.Show("Insira o nome da escola", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbMorada.Text == "")
+            {
+                MessageBox.Show("Insira a morada da escola", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbTelefone.Text == "")
+            {
+                MessageBox.Show("Insira o telefone da escola", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbMail.Text == "")
+            {
+                MessageBox.Show("Insira o email da escola", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbCodPostal.Text == "")
+            {
+                MessageBox.Show("Insira o código de postal da escola", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbLocalidade.Text == "")
+            {
+                MessageBox.Show("Insira a localidade da escola", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }

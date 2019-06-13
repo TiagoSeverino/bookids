@@ -71,6 +71,9 @@ namespace Bookids
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
+            if (!InputValid())
+                return;
+
             Animador animador = new Animador
             {
                 Nome = tbNome.Text,
@@ -94,6 +97,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValid())
+                    return;
+
                 Animador esc = (Animador)dataGridView1.SelectedRows[0].DataBoundItem;
 
 
@@ -176,6 +182,59 @@ namespace Bookids
             isEditing = false;
 
             updateLayout();
+        }
+
+        private bool InputValid()
+        {
+            if (tbNome.Text == "")
+            {
+                MessageBox.Show("Insira o nome do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbMorada.Text == "")
+            {
+                MessageBox.Show("Insira a morada do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbTelefone.Text == "")
+            {
+                MessageBox.Show("Insira o telefone do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbTelemovel.Text == "")
+            {
+                MessageBox.Show("Insira o telemovel do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbMail.Text == "")
+            {
+                MessageBox.Show("Insira o email do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbCodPostal.Text == "")
+            {
+                MessageBox.Show("Insira o código de postal do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbLocalidade.Text == "")
+            {
+                MessageBox.Show("Insira a localidade do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbEspecialidade.Text == "")
+            {
+                MessageBox.Show("Insira a especialidade do animador", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }

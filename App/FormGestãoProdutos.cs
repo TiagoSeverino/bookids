@@ -74,6 +74,8 @@ namespace Bookids
         {
             try
             {
+                if (!InputValid())
+                    return;
                 Produto produto = new Produto
                 {
                     Designação = tbDesignação.Text,
@@ -98,6 +100,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValid())
+                    return;
+
                 Produto prod = (Produto)dataGridView1.SelectedRows[0].DataBoundItem;
 
  
@@ -203,6 +208,9 @@ namespace Bookids
 
         private void BtnAdicionar1_Click(object sender, EventArgs e)
         {
+            if (!InputValidTipoProduto())
+                return;
+
             TipoProduto tipoProduto = new TipoProduto
             {
                 Tipo = tbTipo.Text
@@ -219,6 +227,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValidTipoProduto())
+                    return;
+
                 TipoProduto tp = (TipoProduto)dataGridView2.SelectedRows[0].DataBoundItem;
 
 
@@ -272,6 +283,45 @@ namespace Bookids
         private void BtnCancelar1_Click(object sender, EventArgs e)
         {
             clearTextBoxesTipoProdutos();
+        }
+
+        private bool InputValid()
+        {
+            if (tbDesignação.Text == "")
+            {
+                MessageBox.Show("Insira a designação do produto", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbPreço.Text == "")
+            {
+                MessageBox.Show("Insira o preço do produto", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (nStock.Value == 0)
+            {
+                MessageBox.Show("Insira o stock do produto", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (cbTipoProduto.SelectedIndex == -1)
+            {
+                MessageBox.Show("Selecione o tipo de produto", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool InputValidTipoProduto()
+        {
+            if (tbTipo.Text == "")
+            {
+                MessageBox.Show("Insira o tipo do produto", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            return true;
         }
     }
 }

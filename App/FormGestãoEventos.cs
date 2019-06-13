@@ -56,6 +56,9 @@ namespace Bookids
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
         {
+            if (!InputValid())
+                return;
+
             Evento evento = new Evento
             {
                 Descrição = tbDescrição.Text,
@@ -78,6 +81,9 @@ namespace Bookids
         {
             try
             {
+                if (!InputValid())
+                    return;
+
                 Evento ev = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
 
  
@@ -174,6 +180,41 @@ namespace Bookids
         {
             string hora = string.Format("{0:0#}:{1:0#}", data.Hour, data.Minute);
             return hora;
+        }
+
+        private bool InputValid()
+        {
+            if (tbDescrição.Text == "")
+            {
+                MessageBox.Show("Insira a descrição do evento", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbLocal.Text == "")
+            {
+                MessageBox.Show("Insira o local do evento", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (tbTipoEvento.Text == "")
+            {
+                MessageBox.Show("Insira o tipo de evento", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (nmLimite.Value == 0)
+            {
+                MessageBox.Show("Insira o limite de participações do evento", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            if (nmSuperior.Value == 0)
+            {
+                MessageBox.Show("Insira o limite de idade superior do evento", "Parametro Inválido", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+
+            return true;
         }
     }
 }
