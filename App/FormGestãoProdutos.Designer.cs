@@ -30,6 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.designaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stockExistenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.produtoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new Bookids.DatabaseDataSet();
             this.tbDesignação = new System.Windows.Forms.TextBox();
@@ -50,6 +55,8 @@
             this.produtoesTableAdapter = new Bookids.DatabaseDataSetTableAdapters.ProdutoesTableAdapter();
             this.tipoProdutosTableAdapter = new Bookids.DatabaseDataSetTableAdapters.TipoProdutosTableAdapter();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codTipoProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tipoProdutosBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btnAdicionar1 = new System.Windows.Forms.Button();
@@ -58,13 +65,6 @@
             this.btnGuardar1 = new System.Windows.Forms.Button();
             this.tbTipo = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.designaçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.preçoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stockExistenteDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codTipoProdutoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.produtoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -99,6 +99,51 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // designaçãoDataGridViewTextBoxColumn
+            // 
+            this.designaçãoDataGridViewTextBoxColumn.DataPropertyName = "Designação";
+            this.designaçãoDataGridViewTextBoxColumn.HeaderText = "Designação";
+            this.designaçãoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.designaçãoDataGridViewTextBoxColumn.Name = "designaçãoDataGridViewTextBoxColumn";
+            this.designaçãoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.designaçãoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // preçoDataGridViewTextBoxColumn
+            // 
+            this.preçoDataGridViewTextBoxColumn.DataPropertyName = "Preço";
+            this.preçoDataGridViewTextBoxColumn.HeaderText = "Preço";
+            this.preçoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.preçoDataGridViewTextBoxColumn.Name = "preçoDataGridViewTextBoxColumn";
+            this.preçoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.preçoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // stockExistenteDataGridViewTextBoxColumn
+            // 
+            this.stockExistenteDataGridViewTextBoxColumn.DataPropertyName = "StockExistente";
+            this.stockExistenteDataGridViewTextBoxColumn.HeaderText = "StockExistente";
+            this.stockExistenteDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.stockExistenteDataGridViewTextBoxColumn.Name = "stockExistenteDataGridViewTextBoxColumn";
+            this.stockExistenteDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stockExistenteDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn
+            // 
+            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.DataPropertyName = "TipoProdutoCodTipoProduto";
+            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.HeaderText = "TipoProdutoCodTipoProduto";
+            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.Name = "tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn";
+            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // codProdutoDataGridViewTextBoxColumn
+            // 
+            this.codProdutoDataGridViewTextBoxColumn.DataPropertyName = "CodProduto";
+            this.codProdutoDataGridViewTextBoxColumn.HeaderText = "CodProduto";
+            this.codProdutoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.codProdutoDataGridViewTextBoxColumn.Name = "codProdutoDataGridViewTextBoxColumn";
+            this.codProdutoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codProdutoDataGridViewTextBoxColumn.Width = 150;
+            // 
             // produtoBindingSource
             // 
             this.produtoBindingSource.DataMember = "Produtoes";
@@ -114,7 +159,7 @@
             this.tbDesignação.Location = new System.Drawing.Point(125, 25);
             this.tbDesignação.Name = "tbDesignação";
             this.tbDesignação.Size = new System.Drawing.Size(157, 26);
-            this.tbDesignação.TabIndex = 2;
+            this.tbDesignação.TabIndex = 1;
             // 
             // label1
             // 
@@ -181,7 +226,7 @@
             this.cbTipoProduto.Location = new System.Drawing.Point(130, 121);
             this.cbTipoProduto.Name = "cbTipoProduto";
             this.cbTipoProduto.Size = new System.Drawing.Size(152, 28);
-            this.cbTipoProduto.TabIndex = 5;
+            this.cbTipoProduto.TabIndex = 4;
             this.cbTipoProduto.ValueMember = "CodTipoProduto";
             // 
             // tipoProdutosBindingSource
@@ -199,14 +244,14 @@
             0});
             this.nStock.Name = "nStock";
             this.nStock.Size = new System.Drawing.Size(135, 26);
-            this.nStock.TabIndex = 0;
+            this.nStock.TabIndex = 3;
             // 
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(29, 155);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(253, 35);
-            this.btnAdicionar.TabIndex = 4;
+            this.btnAdicionar.TabIndex = 5;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
@@ -216,7 +261,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(29, 278);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(253, 35);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar Edição";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -226,7 +271,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(29, 237);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(253, 35);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 7;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -236,7 +281,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(29, 196);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(253, 35);
-            this.btnGuardar.TabIndex = 4;
+            this.btnGuardar.TabIndex = 6;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -280,6 +325,24 @@
             this.dataGridView2.TabIndex = 1;
             this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView2_CellContentClick);
             // 
+            // tipoDataGridViewTextBoxColumn
+            // 
+            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
+            this.tipoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
+            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // codTipoProdutoDataGridViewTextBoxColumn
+            // 
+            this.codTipoProdutoDataGridViewTextBoxColumn.DataPropertyName = "CodTipoProduto";
+            this.codTipoProdutoDataGridViewTextBoxColumn.HeaderText = "CodTipoProduto";
+            this.codTipoProdutoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.codTipoProdutoDataGridViewTextBoxColumn.Name = "codTipoProdutoDataGridViewTextBoxColumn";
+            this.codTipoProdutoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codTipoProdutoDataGridViewTextBoxColumn.Width = 150;
+            // 
             // tipoProdutosBindingSource1
             // 
             this.tipoProdutosBindingSource1.DataMember = "TipoProdutos";
@@ -305,7 +368,7 @@
             this.btnAdicionar1.Location = new System.Drawing.Point(20, 65);
             this.btnAdicionar1.Name = "btnAdicionar1";
             this.btnAdicionar1.Size = new System.Drawing.Size(262, 35);
-            this.btnAdicionar1.TabIndex = 4;
+            this.btnAdicionar1.TabIndex = 10;
             this.btnAdicionar1.Text = "Adicionar";
             this.btnAdicionar1.UseVisualStyleBackColor = true;
             this.btnAdicionar1.Click += new System.EventHandler(this.BtnAdicionar1_Click);
@@ -315,7 +378,7 @@
             this.btnCancelar1.Location = new System.Drawing.Point(20, 188);
             this.btnCancelar1.Name = "btnCancelar1";
             this.btnCancelar1.Size = new System.Drawing.Size(262, 35);
-            this.btnCancelar1.TabIndex = 4;
+            this.btnCancelar1.TabIndex = 13;
             this.btnCancelar1.Text = "Cancelar Edição";
             this.btnCancelar1.UseVisualStyleBackColor = true;
             this.btnCancelar1.Click += new System.EventHandler(this.BtnCancelar1_Click);
@@ -325,7 +388,7 @@
             this.btnEleminar1.Location = new System.Drawing.Point(20, 147);
             this.btnEleminar1.Name = "btnEleminar1";
             this.btnEleminar1.Size = new System.Drawing.Size(262, 35);
-            this.btnEleminar1.TabIndex = 4;
+            this.btnEleminar1.TabIndex = 12;
             this.btnEleminar1.Text = "Eliminar";
             this.btnEleminar1.UseVisualStyleBackColor = true;
             this.btnEleminar1.Click += new System.EventHandler(this.BtnEleminar1_Click);
@@ -335,7 +398,7 @@
             this.btnGuardar1.Location = new System.Drawing.Point(20, 106);
             this.btnGuardar1.Name = "btnGuardar1";
             this.btnGuardar1.Size = new System.Drawing.Size(262, 35);
-            this.btnGuardar1.TabIndex = 4;
+            this.btnGuardar1.TabIndex = 11;
             this.btnGuardar1.Text = "Guardar";
             this.btnGuardar1.UseVisualStyleBackColor = true;
             this.btnGuardar1.Click += new System.EventHandler(this.BtnGuardar1_Click);
@@ -345,7 +408,7 @@
             this.tbTipo.Location = new System.Drawing.Point(61, 33);
             this.tbTipo.Name = "tbTipo";
             this.tbTipo.Size = new System.Drawing.Size(221, 26);
-            this.tbTipo.TabIndex = 2;
+            this.tbTipo.TabIndex = 9;
             // 
             // label8
             // 
@@ -355,69 +418,6 @@
             this.label8.Size = new System.Drawing.Size(39, 20);
             this.label8.TabIndex = 3;
             this.label8.Text = "Tipo";
-            // 
-            // designaçãoDataGridViewTextBoxColumn
-            // 
-            this.designaçãoDataGridViewTextBoxColumn.DataPropertyName = "Designação";
-            this.designaçãoDataGridViewTextBoxColumn.HeaderText = "Designação";
-            this.designaçãoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.designaçãoDataGridViewTextBoxColumn.Name = "designaçãoDataGridViewTextBoxColumn";
-            this.designaçãoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.designaçãoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // preçoDataGridViewTextBoxColumn
-            // 
-            this.preçoDataGridViewTextBoxColumn.DataPropertyName = "Preço";
-            this.preçoDataGridViewTextBoxColumn.HeaderText = "Preço";
-            this.preçoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.preçoDataGridViewTextBoxColumn.Name = "preçoDataGridViewTextBoxColumn";
-            this.preçoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.preçoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // stockExistenteDataGridViewTextBoxColumn
-            // 
-            this.stockExistenteDataGridViewTextBoxColumn.DataPropertyName = "StockExistente";
-            this.stockExistenteDataGridViewTextBoxColumn.HeaderText = "StockExistente";
-            this.stockExistenteDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.stockExistenteDataGridViewTextBoxColumn.Name = "stockExistenteDataGridViewTextBoxColumn";
-            this.stockExistenteDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stockExistenteDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn
-            // 
-            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.DataPropertyName = "TipoProdutoCodTipoProduto";
-            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.HeaderText = "TipoProdutoCodTipoProduto";
-            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.Name = "tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn";
-            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoProdutoCodTipoProdutoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // codProdutoDataGridViewTextBoxColumn
-            // 
-            this.codProdutoDataGridViewTextBoxColumn.DataPropertyName = "CodProduto";
-            this.codProdutoDataGridViewTextBoxColumn.HeaderText = "CodProduto";
-            this.codProdutoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.codProdutoDataGridViewTextBoxColumn.Name = "codProdutoDataGridViewTextBoxColumn";
-            this.codProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codProdutoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tipoDataGridViewTextBoxColumn
-            // 
-            this.tipoDataGridViewTextBoxColumn.DataPropertyName = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.HeaderText = "Tipo";
-            this.tipoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tipoDataGridViewTextBoxColumn.Name = "tipoDataGridViewTextBoxColumn";
-            this.tipoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // codTipoProdutoDataGridViewTextBoxColumn
-            // 
-            this.codTipoProdutoDataGridViewTextBoxColumn.DataPropertyName = "CodTipoProduto";
-            this.codTipoProdutoDataGridViewTextBoxColumn.HeaderText = "CodTipoProduto";
-            this.codTipoProdutoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.codTipoProdutoDataGridViewTextBoxColumn.Name = "codTipoProdutoDataGridViewTextBoxColumn";
-            this.codTipoProdutoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codTipoProdutoDataGridViewTextBoxColumn.Width = 150;
             // 
             // FormGestãoProdutos
             // 

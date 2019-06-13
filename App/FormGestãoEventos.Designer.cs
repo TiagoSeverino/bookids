@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.descriçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.limiteParticipaçõesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idadeInferiorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idadeSuperiorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tipoEventoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nrEventoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.eventosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new Bookids.DatabaseDataSet();
             this.tbDescrição = new System.Windows.Forms.TextBox();
@@ -55,14 +63,6 @@
             this.tbTipoEvento = new System.Windows.Forms.TextBox();
             this.eventosTableAdapter = new Bookids.DatabaseDataSetTableAdapters.EscolasTableAdapter();
             this.eventoesTableAdapter = new Bookids.DatabaseDataSetTableAdapters.EventoesTableAdapter();
-            this.descriçãoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataHoraDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.limiteParticipaçõesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idadeInferiorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idadeSuperiorDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tipoEventoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nrEventoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -98,6 +98,78 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
+            // descriçãoDataGridViewTextBoxColumn
+            // 
+            this.descriçãoDataGridViewTextBoxColumn.DataPropertyName = "Descrição";
+            this.descriçãoDataGridViewTextBoxColumn.HeaderText = "Descrição";
+            this.descriçãoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.descriçãoDataGridViewTextBoxColumn.Name = "descriçãoDataGridViewTextBoxColumn";
+            this.descriçãoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriçãoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // localDataGridViewTextBoxColumn
+            // 
+            this.localDataGridViewTextBoxColumn.DataPropertyName = "Local";
+            this.localDataGridViewTextBoxColumn.HeaderText = "Local";
+            this.localDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.localDataGridViewTextBoxColumn.Name = "localDataGridViewTextBoxColumn";
+            this.localDataGridViewTextBoxColumn.ReadOnly = true;
+            this.localDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // dataHoraDataGridViewTextBoxColumn
+            // 
+            this.dataHoraDataGridViewTextBoxColumn.DataPropertyName = "DataHora";
+            this.dataHoraDataGridViewTextBoxColumn.HeaderText = "DataHora";
+            this.dataHoraDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.dataHoraDataGridViewTextBoxColumn.Name = "dataHoraDataGridViewTextBoxColumn";
+            this.dataHoraDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataHoraDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // limiteParticipaçõesDataGridViewTextBoxColumn
+            // 
+            this.limiteParticipaçõesDataGridViewTextBoxColumn.DataPropertyName = "LimiteParticipações";
+            this.limiteParticipaçõesDataGridViewTextBoxColumn.HeaderText = "LimiteParticipações";
+            this.limiteParticipaçõesDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.limiteParticipaçõesDataGridViewTextBoxColumn.Name = "limiteParticipaçõesDataGridViewTextBoxColumn";
+            this.limiteParticipaçõesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.limiteParticipaçõesDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idadeInferiorDataGridViewTextBoxColumn
+            // 
+            this.idadeInferiorDataGridViewTextBoxColumn.DataPropertyName = "IdadeInferior";
+            this.idadeInferiorDataGridViewTextBoxColumn.HeaderText = "IdadeInferior";
+            this.idadeInferiorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idadeInferiorDataGridViewTextBoxColumn.Name = "idadeInferiorDataGridViewTextBoxColumn";
+            this.idadeInferiorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idadeInferiorDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idadeSuperiorDataGridViewTextBoxColumn
+            // 
+            this.idadeSuperiorDataGridViewTextBoxColumn.DataPropertyName = "IdadeSuperior";
+            this.idadeSuperiorDataGridViewTextBoxColumn.HeaderText = "IdadeSuperior";
+            this.idadeSuperiorDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idadeSuperiorDataGridViewTextBoxColumn.Name = "idadeSuperiorDataGridViewTextBoxColumn";
+            this.idadeSuperiorDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idadeSuperiorDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // tipoEventoDataGridViewTextBoxColumn
+            // 
+            this.tipoEventoDataGridViewTextBoxColumn.DataPropertyName = "TipoEvento";
+            this.tipoEventoDataGridViewTextBoxColumn.HeaderText = "TipoEvento";
+            this.tipoEventoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.tipoEventoDataGridViewTextBoxColumn.Name = "tipoEventoDataGridViewTextBoxColumn";
+            this.tipoEventoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.tipoEventoDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // nrEventoDataGridViewTextBoxColumn
+            // 
+            this.nrEventoDataGridViewTextBoxColumn.DataPropertyName = "NrEvento";
+            this.nrEventoDataGridViewTextBoxColumn.HeaderText = "NrEvento";
+            this.nrEventoDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nrEventoDataGridViewTextBoxColumn.Name = "nrEventoDataGridViewTextBoxColumn";
+            this.nrEventoDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nrEventoDataGridViewTextBoxColumn.Width = 150;
+            // 
             // eventosBindingSource
             // 
             this.eventosBindingSource.DataMember = "Eventoes";
@@ -113,7 +185,7 @@
             this.tbDescrição.Location = new System.Drawing.Point(117, 58);
             this.tbDescrição.Name = "tbDescrição";
             this.tbDescrição.Size = new System.Drawing.Size(355, 26);
-            this.tbDescrição.TabIndex = 2;
+            this.tbDescrição.TabIndex = 1;
             // 
             // tbLocal
             // 
@@ -210,14 +282,14 @@
             this.nmSuperior.Location = new System.Drawing.Point(145, 251);
             this.nmSuperior.Name = "nmSuperior";
             this.nmSuperior.Size = new System.Drawing.Size(327, 26);
-            this.nmSuperior.TabIndex = 8;
+            this.nmSuperior.TabIndex = 7;
             // 
             // nmInferior
             // 
             this.nmInferior.Location = new System.Drawing.Point(135, 219);
             this.nmInferior.Name = "nmInferior";
             this.nmInferior.Size = new System.Drawing.Size(337, 26);
-            this.nmInferior.TabIndex = 7;
+            this.nmInferior.TabIndex = 6;
             // 
             // nmLimite
             // 
@@ -229,7 +301,7 @@
             0});
             this.nmLimite.Name = "nmLimite";
             this.nmLimite.Size = new System.Drawing.Size(291, 26);
-            this.nmLimite.TabIndex = 6;
+            this.nmLimite.TabIndex = 5;
             // 
             // tbHora
             // 
@@ -237,7 +309,7 @@
             this.tbHora.Mask = "00:00";
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(355, 26);
-            this.tbHora.TabIndex = 5;
+            this.tbHora.TabIndex = 3;
             this.tbHora.ValidatingType = typeof(System.DateTime);
             // 
             // dateTimePicker1
@@ -245,14 +317,14 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(117, 154);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(355, 26);
-            this.dateTimePicker1.TabIndex = 5;
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // btnAdicionar
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(29, 314);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(443, 50);
-            this.btnAdicionar.TabIndex = 4;
+            this.btnAdicionar.TabIndex = 9;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
@@ -262,7 +334,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(29, 482);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(443, 50);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar Edição";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -272,7 +344,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(29, 426);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(443, 50);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -282,7 +354,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(29, 370);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(443, 50);
-            this.btnGuardar.TabIndex = 4;
+            this.btnGuardar.TabIndex = 10;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -310,7 +382,7 @@
             this.tbTipoEvento.Location = new System.Drawing.Point(124, 282);
             this.tbTipoEvento.Name = "tbTipoEvento";
             this.tbTipoEvento.Size = new System.Drawing.Size(348, 26);
-            this.tbTipoEvento.TabIndex = 2;
+            this.tbTipoEvento.TabIndex = 8;
             // 
             // eventosTableAdapter
             // 
@@ -319,78 +391,6 @@
             // eventoesTableAdapter
             // 
             this.eventoesTableAdapter.ClearBeforeFill = true;
-            // 
-            // descriçãoDataGridViewTextBoxColumn
-            // 
-            this.descriçãoDataGridViewTextBoxColumn.DataPropertyName = "Descrição";
-            this.descriçãoDataGridViewTextBoxColumn.HeaderText = "Descrição";
-            this.descriçãoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.descriçãoDataGridViewTextBoxColumn.Name = "descriçãoDataGridViewTextBoxColumn";
-            this.descriçãoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriçãoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // localDataGridViewTextBoxColumn
-            // 
-            this.localDataGridViewTextBoxColumn.DataPropertyName = "Local";
-            this.localDataGridViewTextBoxColumn.HeaderText = "Local";
-            this.localDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.localDataGridViewTextBoxColumn.Name = "localDataGridViewTextBoxColumn";
-            this.localDataGridViewTextBoxColumn.ReadOnly = true;
-            this.localDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // dataHoraDataGridViewTextBoxColumn
-            // 
-            this.dataHoraDataGridViewTextBoxColumn.DataPropertyName = "DataHora";
-            this.dataHoraDataGridViewTextBoxColumn.HeaderText = "DataHora";
-            this.dataHoraDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.dataHoraDataGridViewTextBoxColumn.Name = "dataHoraDataGridViewTextBoxColumn";
-            this.dataHoraDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dataHoraDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // limiteParticipaçõesDataGridViewTextBoxColumn
-            // 
-            this.limiteParticipaçõesDataGridViewTextBoxColumn.DataPropertyName = "LimiteParticipações";
-            this.limiteParticipaçõesDataGridViewTextBoxColumn.HeaderText = "LimiteParticipações";
-            this.limiteParticipaçõesDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.limiteParticipaçõesDataGridViewTextBoxColumn.Name = "limiteParticipaçõesDataGridViewTextBoxColumn";
-            this.limiteParticipaçõesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.limiteParticipaçõesDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // idadeInferiorDataGridViewTextBoxColumn
-            // 
-            this.idadeInferiorDataGridViewTextBoxColumn.DataPropertyName = "IdadeInferior";
-            this.idadeInferiorDataGridViewTextBoxColumn.HeaderText = "IdadeInferior";
-            this.idadeInferiorDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idadeInferiorDataGridViewTextBoxColumn.Name = "idadeInferiorDataGridViewTextBoxColumn";
-            this.idadeInferiorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idadeInferiorDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // idadeSuperiorDataGridViewTextBoxColumn
-            // 
-            this.idadeSuperiorDataGridViewTextBoxColumn.DataPropertyName = "IdadeSuperior";
-            this.idadeSuperiorDataGridViewTextBoxColumn.HeaderText = "IdadeSuperior";
-            this.idadeSuperiorDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idadeSuperiorDataGridViewTextBoxColumn.Name = "idadeSuperiorDataGridViewTextBoxColumn";
-            this.idadeSuperiorDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idadeSuperiorDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // tipoEventoDataGridViewTextBoxColumn
-            // 
-            this.tipoEventoDataGridViewTextBoxColumn.DataPropertyName = "TipoEvento";
-            this.tipoEventoDataGridViewTextBoxColumn.HeaderText = "TipoEvento";
-            this.tipoEventoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.tipoEventoDataGridViewTextBoxColumn.Name = "tipoEventoDataGridViewTextBoxColumn";
-            this.tipoEventoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.tipoEventoDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nrEventoDataGridViewTextBoxColumn
-            // 
-            this.nrEventoDataGridViewTextBoxColumn.DataPropertyName = "NrEvento";
-            this.nrEventoDataGridViewTextBoxColumn.HeaderText = "NrEvento";
-            this.nrEventoDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nrEventoDataGridViewTextBoxColumn.Name = "nrEventoDataGridViewTextBoxColumn";
-            this.nrEventoDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nrEventoDataGridViewTextBoxColumn.Width = 150;
             // 
             // FormGestãoEventos
             // 

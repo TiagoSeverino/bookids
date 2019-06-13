@@ -189,7 +189,7 @@
             this.tbNome.Location = new System.Drawing.Point(117, 25);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(355, 26);
-            this.tbNome.TabIndex = 5;
+            this.tbNome.TabIndex = 1;
             // 
             // label10
             // 
@@ -223,7 +223,7 @@
             this.tbMorada.Location = new System.Drawing.Point(117, 57);
             this.tbMorada.Name = "tbMorada";
             this.tbMorada.Size = new System.Drawing.Size(355, 26);
-            this.tbMorada.TabIndex = 6;
+            this.tbMorada.TabIndex = 2;
             // 
             // label5
             // 
@@ -239,14 +239,14 @@
             this.tbTelemovel.Location = new System.Drawing.Point(117, 121);
             this.tbTelemovel.Name = "tbTelemovel";
             this.tbTelemovel.Size = new System.Drawing.Size(355, 26);
-            this.tbTelemovel.TabIndex = 7;
+            this.tbTelemovel.TabIndex = 4;
             // 
             // tbTelefone
             // 
             this.tbTelefone.Location = new System.Drawing.Point(117, 89);
             this.tbTelefone.Name = "tbTelefone";
             this.tbTelefone.Size = new System.Drawing.Size(355, 26);
-            this.tbTelefone.TabIndex = 8;
+            this.tbTelefone.TabIndex = 3;
             // 
             // label4
             // 
@@ -271,7 +271,7 @@
             this.tbMail.Location = new System.Drawing.Point(117, 153);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(355, 26);
-            this.tbMail.TabIndex = 9;
+            this.tbMail.TabIndex = 5;
             // 
             // label3
             // 
@@ -287,7 +287,7 @@
             this.tbCodPostal.Location = new System.Drawing.Point(117, 185);
             this.tbCodPostal.Name = "tbCodPostal";
             this.tbCodPostal.Size = new System.Drawing.Size(355, 26);
-            this.tbCodPostal.TabIndex = 10;
+            this.tbCodPostal.TabIndex = 6;
             // 
             // label2
             // 
@@ -303,21 +303,21 @@
             this.tbNrCartao.Location = new System.Drawing.Point(148, 281);
             this.tbNrCartao.Name = "tbNrCartao";
             this.tbNrCartao.Size = new System.Drawing.Size(324, 26);
-            this.tbNrCartao.TabIndex = 11;
+            this.tbNrCartao.TabIndex = 9;
             // 
             // tbOferta
             // 
             this.tbOferta.Location = new System.Drawing.Point(139, 249);
             this.tbOferta.Name = "tbOferta";
             this.tbOferta.Size = new System.Drawing.Size(333, 26);
-            this.tbOferta.TabIndex = 11;
+            this.tbOferta.TabIndex = 8;
             // 
             // tbLocalidade
             // 
             this.tbLocalidade.Location = new System.Drawing.Point(117, 217);
             this.tbLocalidade.Name = "tbLocalidade";
             this.tbLocalidade.Size = new System.Drawing.Size(355, 26);
-            this.tbLocalidade.TabIndex = 12;
+            this.tbLocalidade.TabIndex = 7;
             // 
             // label9
             // 
@@ -333,7 +333,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(29, 313);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(443, 50);
-            this.btnAdicionar.TabIndex = 4;
+            this.btnAdicionar.TabIndex = 10;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
@@ -343,7 +343,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(29, 481);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(443, 50);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar Edição";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -353,7 +353,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(29, 425);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(443, 50);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 12;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -363,7 +363,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(29, 369);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(443, 50);
-            this.btnGuardar.TabIndex = 4;
+            this.btnGuardar.TabIndex = 11;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -446,7 +446,7 @@
             this.btnGuardar1.Location = new System.Drawing.Point(20, 253);
             this.btnGuardar1.Name = "btnGuardar1";
             this.btnGuardar1.Size = new System.Drawing.Size(443, 50);
-            this.btnGuardar1.TabIndex = 4;
+            this.btnGuardar1.TabIndex = 21;
             this.btnGuardar1.Text = "Guardar";
             this.btnGuardar1.UseVisualStyleBackColor = true;
             this.btnGuardar1.Click += new System.EventHandler(this.BtnGuardar1_Click);
@@ -456,7 +456,7 @@
             this.btnEleminar1.Location = new System.Drawing.Point(20, 309);
             this.btnEleminar1.Name = "btnEleminar1";
             this.btnEleminar1.Size = new System.Drawing.Size(443, 50);
-            this.btnEleminar1.TabIndex = 4;
+            this.btnEleminar1.TabIndex = 22;
             this.btnEleminar1.Text = "Eliminar";
             this.btnEleminar1.UseVisualStyleBackColor = true;
             this.btnEleminar1.Click += new System.EventHandler(this.BtnEleminar1_Click);
@@ -466,7 +466,7 @@
             this.btnCancelar1.Location = new System.Drawing.Point(20, 365);
             this.btnCancelar1.Name = "btnCancelar1";
             this.btnCancelar1.Size = new System.Drawing.Size(443, 50);
-            this.btnCancelar1.TabIndex = 4;
+            this.btnCancelar1.TabIndex = 23;
             this.btnCancelar1.Text = "Cancelar Edição";
             this.btnCancelar1.UseVisualStyleBackColor = true;
             this.btnCancelar1.Click += new System.EventHandler(this.BtnCancelar1_Click);
@@ -476,7 +476,7 @@
             this.btnAdicionar1.Location = new System.Drawing.Point(20, 197);
             this.btnAdicionar1.Name = "btnAdicionar1";
             this.btnAdicionar1.Size = new System.Drawing.Size(443, 50);
-            this.btnAdicionar1.TabIndex = 4;
+            this.btnAdicionar1.TabIndex = 20;
             this.btnAdicionar1.Text = "Adicionar";
             this.btnAdicionar1.UseVisualStyleBackColor = true;
             this.btnAdicionar1.Click += new System.EventHandler(this.BtnAdicionar1_Click);
@@ -513,7 +513,7 @@
             this.comboBox2.Location = new System.Drawing.Point(80, 62);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(383, 28);
-            this.comboBox2.TabIndex = 39;
+            this.comboBox2.TabIndex = 15;
             this.comboBox2.ValueMember = "IdEscola";
             // 
             // escolasBindingSource
@@ -529,7 +529,7 @@
             this.comboBox1.Location = new System.Drawing.Point(80, 25);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(383, 28);
-            this.comboBox1.TabIndex = 38;
+            this.comboBox1.TabIndex = 14;
             this.comboBox1.ValueMember = "IdPessoa";
             // 
             // dateTimePicker1
@@ -537,7 +537,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(154, 156);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(309, 26);
-            this.dateTimePicker1.TabIndex = 37;
+            this.dateTimePicker1.TabIndex = 19;
             // 
             // rFeminino
             // 
@@ -545,7 +545,7 @@
             this.rFeminino.Location = new System.Drawing.Point(219, 128);
             this.rFeminino.Name = "rFeminino";
             this.rFeminino.Size = new System.Drawing.Size(99, 24);
-            this.rFeminino.TabIndex = 36;
+            this.rFeminino.TabIndex = 18;
             this.rFeminino.TabStop = true;
             this.rFeminino.Text = "Feminino";
             this.rFeminino.UseVisualStyleBackColor = true;
@@ -556,7 +556,7 @@
             this.rMasculino.Location = new System.Drawing.Point(108, 129);
             this.rMasculino.Name = "rMasculino";
             this.rMasculino.Size = new System.Drawing.Size(105, 24);
-            this.rMasculino.TabIndex = 35;
+            this.rMasculino.TabIndex = 17;
             this.rMasculino.TabStop = true;
             this.rMasculino.Text = "Masculino";
             this.rMasculino.UseVisualStyleBackColor = true;
@@ -566,7 +566,7 @@
             this.tbNomeFilho.Location = new System.Drawing.Point(108, 97);
             this.tbNomeFilho.Name = "tbNomeFilho";
             this.tbNomeFilho.Size = new System.Drawing.Size(355, 26);
-            this.tbNomeFilho.TabIndex = 21;
+            this.tbNomeFilho.TabIndex = 16;
             // 
             // label20
             // 

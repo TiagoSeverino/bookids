@@ -123,7 +123,7 @@
             this.tbNome.Location = new System.Drawing.Point(117, 58);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(225, 26);
-            this.tbNome.TabIndex = 2;
+            this.tbNome.TabIndex = 1;
             // 
             // tbMorada
             // 
@@ -137,28 +137,28 @@
             this.tbTelefone.Location = new System.Drawing.Point(117, 122);
             this.tbTelefone.Name = "tbTelefone";
             this.tbTelefone.Size = new System.Drawing.Size(225, 26);
-            this.tbTelefone.TabIndex = 2;
+            this.tbTelefone.TabIndex = 3;
             // 
             // tbMail
             // 
             this.tbMail.Location = new System.Drawing.Point(117, 186);
             this.tbMail.Name = "tbMail";
             this.tbMail.Size = new System.Drawing.Size(225, 26);
-            this.tbMail.TabIndex = 2;
+            this.tbMail.TabIndex = 5;
             // 
             // tbCodPostal
             // 
             this.tbCodPostal.Location = new System.Drawing.Point(117, 218);
             this.tbCodPostal.Name = "tbCodPostal";
             this.tbCodPostal.Size = new System.Drawing.Size(225, 26);
-            this.tbCodPostal.TabIndex = 2;
+            this.tbCodPostal.TabIndex = 6;
             // 
             // tbLocalidade
             // 
             this.tbLocalidade.Location = new System.Drawing.Point(117, 250);
             this.tbLocalidade.Name = "tbLocalidade";
             this.tbLocalidade.Size = new System.Drawing.Size(225, 26);
-            this.tbLocalidade.TabIndex = 2;
+            this.tbLocalidade.TabIndex = 7;
             // 
             // label1
             // 
@@ -248,7 +248,7 @@
             this.btnAdicionar.Location = new System.Drawing.Point(29, 314);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(313, 50);
-            this.btnAdicionar.TabIndex = 4;
+            this.btnAdicionar.TabIndex = 9;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
             this.btnAdicionar.Click += new System.EventHandler(this.BtnAdicionar_Click);
@@ -258,7 +258,7 @@
             this.btnCancelar.Location = new System.Drawing.Point(29, 482);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(313, 50);
-            this.btnCancelar.TabIndex = 4;
+            this.btnCancelar.TabIndex = 12;
             this.btnCancelar.Text = "Cancelar Edição";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
@@ -268,7 +268,7 @@
             this.btnEliminar.Location = new System.Drawing.Point(29, 426);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(313, 50);
-            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.TabIndex = 11;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
@@ -278,7 +278,7 @@
             this.btnGuardar.Location = new System.Drawing.Point(29, 370);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(313, 50);
-            this.btnGuardar.TabIndex = 4;
+            this.btnGuardar.TabIndex = 10;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
@@ -297,7 +297,7 @@
             this.tbTelemovel.Location = new System.Drawing.Point(117, 154);
             this.tbTelemovel.Name = "tbTelemovel";
             this.tbTelemovel.Size = new System.Drawing.Size(225, 26);
-            this.tbTelemovel.TabIndex = 2;
+            this.tbTelemovel.TabIndex = 4;
             // 
             // label8
             // 
@@ -313,7 +313,7 @@
             this.tbEspecialidade.Location = new System.Drawing.Point(139, 282);
             this.tbEspecialidade.Name = "tbEspecialidade";
             this.tbEspecialidade.Size = new System.Drawing.Size(203, 26);
-            this.tbEspecialidade.TabIndex = 2;
+            this.tbEspecialidade.TabIndex = 8;
             // 
             // animadoresTableAdapter
             // 
