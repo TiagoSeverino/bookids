@@ -67,11 +67,21 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.btnAdicionarColaborador = new System.Windows.Forms.Button();
             this.btnRemoverColaborador = new System.Windows.Forms.Button();
-            this.cbAnimadores = new System.Windows.Forms.ComboBox();
+            this.cbColaborações = new System.Windows.Forms.ComboBox();
             this.pessoasAnimadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colaboraçãoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.colaboraçãoTableAdapter = new Bookids.DatabaseDataSetTableAdapters.ColaboraçãoTableAdapter();
             this.pessoas_AnimadorTableAdapter = new Bookids.DatabaseDataSetTableAdapters.Pessoas_AnimadorTableAdapter();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.btnAdicionarEscolas = new System.Windows.Forms.Button();
+            this.btnEleminarEscolas = new System.Windows.Forms.Button();
+            this.cbParticipações = new System.Windows.Forms.ComboBox();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
+            this.btnAdicionarFilho = new System.Windows.Forms.Button();
+            this.btnEliminarFilho = new System.Windows.Forms.Button();
+            this.cbInscrições = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -83,6 +93,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.colaboraçãoBindingSource)).BeginInit();
+            this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.groupBox4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -107,7 +121,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(764, 492);
+            this.dataGridView1.Size = new System.Drawing.Size(695, 492);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -283,9 +297,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbTipoEvento);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(782, 12);
+            this.groupBox1.Location = new System.Drawing.Point(713, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 492);
+            this.groupBox1.Size = new System.Drawing.Size(503, 492);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eventos";
@@ -410,7 +424,7 @@
             this.groupBox2.Controls.Add(this.dataGridView2);
             this.groupBox2.Controls.Add(this.btnAdicionarColaborador);
             this.groupBox2.Controls.Add(this.btnRemoverColaborador);
-            this.groupBox2.Controls.Add(this.cbAnimadores);
+            this.groupBox2.Controls.Add(this.cbColaborações);
             this.groupBox2.Location = new System.Drawing.Point(12, 510);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(393, 391);
@@ -445,17 +459,17 @@
             this.btnRemoverColaborador.Name = "btnRemoverColaborador";
             this.btnRemoverColaborador.Size = new System.Drawing.Size(381, 50);
             this.btnRemoverColaborador.TabIndex = 1;
-            this.btnRemoverColaborador.Text = "Eleminar";
+            this.btnRemoverColaborador.Text = "Eliminar";
             this.btnRemoverColaborador.UseVisualStyleBackColor = true;
             this.btnRemoverColaborador.Click += new System.EventHandler(this.BtnRemoverColaborador_Click);
             // 
-            // cbAnimadores
+            // cbColaborações
             // 
-            this.cbAnimadores.FormattingEnabled = true;
-            this.cbAnimadores.Location = new System.Drawing.Point(6, 25);
-            this.cbAnimadores.Name = "cbAnimadores";
-            this.cbAnimadores.Size = new System.Drawing.Size(381, 28);
-            this.cbAnimadores.TabIndex = 0;
+            this.cbColaborações.FormattingEnabled = true;
+            this.cbColaborações.Location = new System.Drawing.Point(6, 25);
+            this.cbColaborações.Name = "cbColaborações";
+            this.cbColaborações.Size = new System.Drawing.Size(381, 28);
+            this.cbColaborações.TabIndex = 0;
             // 
             // pessoasAnimadorBindingSource
             // 
@@ -475,11 +489,117 @@
             // 
             this.pessoas_AnimadorTableAdapter.ClearBeforeFill = true;
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.dataGridView3);
+            this.groupBox3.Controls.Add(this.btnAdicionarEscolas);
+            this.groupBox3.Controls.Add(this.btnEleminarEscolas);
+            this.groupBox3.Controls.Add(this.cbParticipações);
+            this.groupBox3.Location = new System.Drawing.Point(411, 510);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(393, 391);
+            this.groupBox3.TabIndex = 5;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Participações";
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Location = new System.Drawing.Point(6, 59);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.RowHeadersWidth = 62;
+            this.dataGridView3.RowTemplate.Height = 28;
+            this.dataGridView3.Size = new System.Drawing.Size(381, 216);
+            this.dataGridView3.TabIndex = 2;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView3_CellClick);
+            // 
+            // btnAdicionarEscolas
+            // 
+            this.btnAdicionarEscolas.Location = new System.Drawing.Point(6, 281);
+            this.btnAdicionarEscolas.Name = "btnAdicionarEscolas";
+            this.btnAdicionarEscolas.Size = new System.Drawing.Size(381, 50);
+            this.btnAdicionarEscolas.TabIndex = 1;
+            this.btnAdicionarEscolas.Text = "Adicionar";
+            this.btnAdicionarEscolas.UseVisualStyleBackColor = true;
+            this.btnAdicionarEscolas.Click += new System.EventHandler(this.BtnAdicionarEscolas_Click);
+            // 
+            // btnEleminarEscolas
+            // 
+            this.btnEleminarEscolas.Location = new System.Drawing.Point(6, 337);
+            this.btnEleminarEscolas.Name = "btnEleminarEscolas";
+            this.btnEleminarEscolas.Size = new System.Drawing.Size(381, 50);
+            this.btnEleminarEscolas.TabIndex = 1;
+            this.btnEleminarEscolas.Text = "Eliminar";
+            this.btnEleminarEscolas.UseVisualStyleBackColor = true;
+            this.btnEleminarEscolas.Click += new System.EventHandler(this.BtnEleminarEscolas_Click);
+            // 
+            // cbParticipações
+            // 
+            this.cbParticipações.FormattingEnabled = true;
+            this.cbParticipações.Location = new System.Drawing.Point(6, 25);
+            this.cbParticipações.Name = "cbParticipações";
+            this.cbParticipações.Size = new System.Drawing.Size(381, 28);
+            this.cbParticipações.TabIndex = 0;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.dataGridView4);
+            this.groupBox4.Controls.Add(this.btnAdicionarFilho);
+            this.groupBox4.Controls.Add(this.btnEliminarFilho);
+            this.groupBox4.Controls.Add(this.cbInscrições);
+            this.groupBox4.Location = new System.Drawing.Point(810, 510);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(406, 391);
+            this.groupBox4.TabIndex = 5;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Inscrições";
+            // 
+            // dataGridView4
+            // 
+            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView4.Location = new System.Drawing.Point(6, 59);
+            this.dataGridView4.Name = "dataGridView4";
+            this.dataGridView4.RowHeadersWidth = 62;
+            this.dataGridView4.RowTemplate.Height = 28;
+            this.dataGridView4.Size = new System.Drawing.Size(381, 216);
+            this.dataGridView4.TabIndex = 2;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView4_CellClick);
+            // 
+            // btnAdicionarFilho
+            // 
+            this.btnAdicionarFilho.Location = new System.Drawing.Point(6, 281);
+            this.btnAdicionarFilho.Name = "btnAdicionarFilho";
+            this.btnAdicionarFilho.Size = new System.Drawing.Size(381, 50);
+            this.btnAdicionarFilho.TabIndex = 1;
+            this.btnAdicionarFilho.Text = "Adicionar";
+            this.btnAdicionarFilho.UseVisualStyleBackColor = true;
+            this.btnAdicionarFilho.Click += new System.EventHandler(this.BtnAdicionarFilho_Click);
+            // 
+            // btnEliminarFilho
+            // 
+            this.btnEliminarFilho.Location = new System.Drawing.Point(6, 337);
+            this.btnEliminarFilho.Name = "btnEliminarFilho";
+            this.btnEliminarFilho.Size = new System.Drawing.Size(381, 50);
+            this.btnEliminarFilho.TabIndex = 1;
+            this.btnEliminarFilho.Text = "Eliminar";
+            this.btnEliminarFilho.UseVisualStyleBackColor = true;
+            this.btnEliminarFilho.Click += new System.EventHandler(this.BtnEliminarFilho_Click);
+            // 
+            // cbInscrições
+            // 
+            this.cbInscrições.FormattingEnabled = true;
+            this.cbInscrições.Location = new System.Drawing.Point(6, 25);
+            this.cbInscrições.Name = "cbInscrições";
+            this.cbInscrições.Size = new System.Drawing.Size(381, 28);
+            this.cbInscrições.TabIndex = 0;
+            // 
             // FormGestãoEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 913);
+            this.ClientSize = new System.Drawing.Size(1228, 913);
+            this.Controls.Add(this.groupBox4);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
@@ -499,6 +619,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.colaboraçãoBindingSource)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.groupBox4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -541,11 +665,21 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btnAdicionarColaborador;
         private System.Windows.Forms.Button btnRemoverColaborador;
-        private System.Windows.Forms.ComboBox cbAnimadores;
+        private System.Windows.Forms.ComboBox cbColaborações;
         private System.Windows.Forms.BindingSource colaboraçãoBindingSource;
         private DatabaseDataSetTableAdapters.ColaboraçãoTableAdapter colaboraçãoTableAdapter;
         private System.Windows.Forms.BindingSource pessoasAnimadorBindingSource;
         private DatabaseDataSetTableAdapters.Pessoas_AnimadorTableAdapter pessoas_AnimadorTableAdapter;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.Button btnAdicionarEscolas;
+        private System.Windows.Forms.Button btnEleminarEscolas;
+        private System.Windows.Forms.ComboBox cbParticipações;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.DataGridView dataGridView4;
+        private System.Windows.Forms.Button btnAdicionarFilho;
+        private System.Windows.Forms.Button btnEliminarFilho;
+        private System.Windows.Forms.ComboBox cbInscrições;
     }
 }

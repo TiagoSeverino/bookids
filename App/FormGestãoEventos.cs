@@ -29,12 +29,60 @@ namespace Bookids
 
         private void FormGestãoEventos_Load(object sender, EventArgs e)
         {
-            var animadores = from animador in modelContainer.Animadores
+            
+        }
+
+        private void UpdateCombos()
+        {
+            cbColaborações.SelectedIndex = -1;
+            cbParticipações.SelectedIndex = -1;
+            cbInscrições.SelectedIndex = -1;
+
+            int idEvento = ((Evento)dataGridView1.SelectedRows[0].DataBoundItem).NrEvento;
+
+            var animadoresColaborando = from animador in modelContainer.Animadores
+                             join colab in modelContainer.Colaboração
+                             on animador.IdPessoa equals colab.AnimadorIdPessoa
+                             where colab.EventoNrEvento == idEvento
                              select animador;
 
-            cbAnimadores.DataSource = animadores.ToList();
-            cbAnimadores.DisplayMember = "Especialidade";
-            cbAnimadores.ValueMember = "IdPessoa";
+            var animadores = from animador in modelContainer.Animadores
+                             orderby animador.Nome
+                             select animador;
+
+            cbColaborações.DataSource = animadores.Except(animadoresColaborando).ToList();
+            cbColaborações.DisplayMember = "Especialidade";
+            cbColaborações.ValueMember = "IdPessoa";
+
+            var escolasParticipando = from escola in modelContainer.Escolas
+                                        join part in modelContainer.Participação
+                                        on escola.IdEscola equals part.EscolaIdEscola
+                                        where part.EventoNrEvento == idEvento
+                                        select escola;
+
+            var escolas = from escola in modelContainer.Escolas
+                          orderby escola.Nome
+                          select escola;
+
+            cbParticipações.DataSource = escolas.Except(escolasParticipando).ToList();
+            cbParticipações.DisplayMember = "Nome";
+            cbParticipações.ValueMember = "IdEscola";
+
+            var filhosInscritos = from filho in modelContainer.Filhos
+                                      join insc in modelContainer.Inscrição
+                                      on filho.IdPessoa equals insc.FilhoIdPessoa
+                                      where insc.EventoNrEvento == idEvento
+                                      select filho;
+
+            var filhos = from filho in modelContainer.Filhos
+                         join escola in escolasParticipando
+                         on filho.EscolaIdEscola equals escola.IdEscola
+                         orderby filho.Nome
+                         select filho;
+
+            cbInscrições.DataSource = filhos.Except(filhosInscritos).ToList();
+            cbInscrições.DisplayMember = "Nome";
+            cbInscrições.ValueMember = "IdPessoa";
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -62,6 +110,26 @@ namespace Bookids
 
                 dataGridView2.DataSource = listaColaborações.ToList();
 
+
+                var listaParticipações = from escola in modelContainer.Escolas
+                                        join participacao in modelContainer.Participação
+                                        on escola.IdEscola equals participacao.EscolaIdEscola
+                                        where participacao.EventoNrEvento == evento.NrEvento
+                                        select new { Nome = escola.Nome, IdEscola = escola.IdEscola, IdEvento = participacao.EventoNrEvento };
+
+                dataGridView3.DataSource = listaParticipações.ToList();
+
+
+                var listaInscrições = from filho in modelContainer.Filhos
+                                         join inscrição in modelContainer.Inscrição
+                                         on filho.IdPessoa equals inscrição.FilhoIdPessoa
+                                      where inscrição.EventoNrEvento == evento.NrEvento
+                                         select new { Nome = filho.Nome, IdPessoa = filho.IdPessoa, IdEvento = inscrição.EventoNrEvento };
+
+                dataGridView4.DataSource = listaInscrições.ToList();
+
+                UpdateCombos();
+
                 isEditing = true;
                 updateLayout();
             }
@@ -70,6 +138,18 @@ namespace Bookids
         {
             if (e.RowIndex >= 0)
                 dataGridView2.CurrentRow.Selected = true;
+        }
+
+        private void DataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+                dataGridView3.CurrentRow.Selected = true;
+        }
+
+        private void DataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+                dataGridView4.CurrentRow.Selected = true;
         }
 
         private void BtnAdicionar_Click(object sender, EventArgs e)
@@ -169,6 +249,8 @@ namespace Bookids
             btnCancelar.Enabled = isEditing;
 
             groupBox2.Enabled = isEditing;
+            groupBox3.Enabled = isEditing;
+            groupBox4.Enabled = isEditing;
         }
 
         private void clearTextBoxes()
@@ -182,8 +264,13 @@ namespace Bookids
             nmInferior.Value = 0;
             tbTipoEvento.Text = "";
 
-            cbAnimadores.SelectedIndex = -1;
+            cbColaborações.SelectedIndex = -1;
+            cbParticipações.SelectedIndex = -1;
+            cbInscrições.SelectedIndex = -1;
+
             dataGridView2.DataSource = null;
+            dataGridView3.DataSource = null;
+            dataGridView4.DataSource = null;
 
             isEditing = false;
 
@@ -244,7 +331,7 @@ namespace Bookids
         {
             try
             {
-                if (cbAnimadores.SelectedIndex == -1)
+                if (cbColaborações.SelectedIndex == -1)
                     return;
 
                 Evento evento = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
@@ -252,7 +339,7 @@ namespace Bookids
                 Colaboração colaboração = new Colaboração
                 {
                     EventoNrEvento = evento.NrEvento,
-                    AnimadorIdPessoa = (int)cbAnimadores.SelectedValue
+                    AnimadorIdPessoa = (int)cbColaborações.SelectedValue
                 };
 
                 modelContainer.Colaboração.Add(colaboração);
@@ -286,5 +373,96 @@ namespace Bookids
             }
         }
 
+        private void BtnAdicionarEscolas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbParticipações.SelectedIndex == -1)
+                    return;
+
+                Evento evento = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
+
+                Participação participação = new Participação
+                {
+                    EventoNrEvento = evento.NrEvento,
+                    EscolaIdEscola = (int)cbParticipações.SelectedValue
+                };
+
+                modelContainer.Participação.Add(participação);
+                modelContainer.SaveChanges();
+                carregarEventos();
+                clearTextBoxes();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnEleminarEscolas_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idEscola = (int)dataGridView3.SelectedRows[0].Cells[1].Value;
+                int nrEvento = (int)dataGridView3.SelectedRows[0].Cells[2].Value;
+
+                Participação colab = modelContainer.Participação.Where(x => x.EscolaIdEscola == idEscola && x.EventoNrEvento == nrEvento).FirstOrDefault();
+                modelContainer.Participação.Remove(colab);
+                modelContainer.SaveChanges();
+                carregarEventos();
+
+                clearTextBoxes();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnAdicionarFilho_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (cbInscrições.SelectedIndex == -1)
+                    return;
+
+                Evento evento = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
+
+                Inscrição inscrição = new Inscrição
+                {
+                    EventoNrEvento = evento.NrEvento,
+                    FilhoIdPessoa = (int)cbInscrições.SelectedValue
+                };
+
+                modelContainer.Inscrição.Add(inscrição);
+                modelContainer.SaveChanges();
+                carregarEventos();
+                clearTextBoxes();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
+
+        private void BtnEliminarFilho_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                int idPessoa = (int)dataGridView4.SelectedRows[0].Cells[1].Value;
+                int nrEvento = (int)dataGridView4.SelectedRows[0].Cells[2].Value;
+
+                Inscrição colab = modelContainer.Inscrição.Where(x => x.FilhoIdPessoa == idPessoa && x.EventoNrEvento == nrEvento).FirstOrDefault();
+                modelContainer.Inscrição.Remove(colab);
+                modelContainer.SaveChanges();
+                carregarEventos();
+
+                clearTextBoxes();
+            }
+            catch (Exception)
+            {
+
+            }
+        }
     }
 }
