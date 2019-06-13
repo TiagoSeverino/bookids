@@ -21,26 +21,10 @@ namespace Bookids
         {
             InitializeComponent();
 
-            InitColumn();
-
             modelContainer = new ModelContainer();
 
             carregarEscolas();
             clearTextBoxes();
-        }
-
-        private void InitColumn()
-        {
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 150;
-
-            this.dataGridView1.Columns.Insert(0, this.nomeDataGridViewTextBoxColumn);
         }
 
         private void FormGestãoEscolas_Load(object sender, EventArgs e)

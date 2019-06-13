@@ -32,9 +32,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.especialidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.pessoasAnimadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.databaseDataSet = new Bookids.DatabaseDataSet();
             this.animadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.databaseDataSet = new Bookids.DatabaseDataSet();
+            this.pessoasAnimadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbNome = new System.Windows.Forms.TextBox();
             this.tbMorada = new System.Windows.Forms.TextBox();
             this.tbTelefone = new System.Windows.Forms.TextBox();
@@ -59,9 +59,9 @@
             this.animadoresTableAdapter = new Bookids.DatabaseDataSetTableAdapters.EscolasTableAdapter();
             this.pessoas_AnimadorTableAdapter = new Bookids.DatabaseDataSetTableAdapters.Pessoas_AnimadorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.animadoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -81,7 +81,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(367, 800);
+            this.dataGridView1.Size = new System.Drawing.Size(471, 555);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -103,61 +103,61 @@
             this.idPessoaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idPessoaDataGridViewTextBoxColumn.Width = 150;
             // 
-            // pessoasAnimadorBindingSource
+            // animadoresBindingSource
             // 
-            this.pessoasAnimadorBindingSource.DataMember = "Pessoas_Animador";
-            this.pessoasAnimadorBindingSource.DataSource = this.databaseDataSet;
+            this.animadoresBindingSource.DataMember = "Pessoas_Animador";
+            this.animadoresBindingSource.DataSource = this.databaseDataSet;
             // 
             // databaseDataSet
             // 
             this.databaseDataSet.DataSetName = "DatabaseDataSet";
             this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // animadoresBindingSource
+            // pessoasAnimadorBindingSource
             // 
-            this.animadoresBindingSource.DataMember = "Pessoas_Animador";
-            this.animadoresBindingSource.DataSource = this.databaseDataSet;
+            this.pessoasAnimadorBindingSource.DataMember = "Pessoas_Animador";
+            this.pessoasAnimadorBindingSource.DataSource = this.databaseDataSet;
             // 
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(117, 58);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(355, 26);
+            this.tbNome.Size = new System.Drawing.Size(225, 26);
             this.tbNome.TabIndex = 2;
             // 
             // tbMorada
             // 
             this.tbMorada.Location = new System.Drawing.Point(117, 90);
             this.tbMorada.Name = "tbMorada";
-            this.tbMorada.Size = new System.Drawing.Size(355, 26);
+            this.tbMorada.Size = new System.Drawing.Size(225, 26);
             this.tbMorada.TabIndex = 2;
             // 
             // tbTelefone
             // 
             this.tbTelefone.Location = new System.Drawing.Point(117, 122);
             this.tbTelefone.Name = "tbTelefone";
-            this.tbTelefone.Size = new System.Drawing.Size(355, 26);
+            this.tbTelefone.Size = new System.Drawing.Size(225, 26);
             this.tbTelefone.TabIndex = 2;
             // 
             // tbMail
             // 
             this.tbMail.Location = new System.Drawing.Point(117, 186);
             this.tbMail.Name = "tbMail";
-            this.tbMail.Size = new System.Drawing.Size(355, 26);
+            this.tbMail.Size = new System.Drawing.Size(225, 26);
             this.tbMail.TabIndex = 2;
             // 
             // tbCodPostal
             // 
             this.tbCodPostal.Location = new System.Drawing.Point(117, 218);
             this.tbCodPostal.Name = "tbCodPostal";
-            this.tbCodPostal.Size = new System.Drawing.Size(355, 26);
+            this.tbCodPostal.Size = new System.Drawing.Size(225, 26);
             this.tbCodPostal.TabIndex = 2;
             // 
             // tbLocalidade
             // 
             this.tbLocalidade.Location = new System.Drawing.Point(117, 250);
             this.tbLocalidade.Name = "tbLocalidade";
-            this.tbLocalidade.Size = new System.Drawing.Size(355, 26);
+            this.tbLocalidade.Size = new System.Drawing.Size(225, 26);
             this.tbLocalidade.TabIndex = 2;
             // 
             // label1
@@ -236,9 +236,9 @@
             this.groupBox1.Controls.Add(this.tbEspecialidade);
             this.groupBox1.Controls.Add(this.tbLocalidade);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(385, 12);
+            this.groupBox1.Location = new System.Drawing.Point(489, 21);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(490, 541);
+            this.groupBox1.Size = new System.Drawing.Size(381, 546);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Animadores";
@@ -247,7 +247,7 @@
             // 
             this.btnAdicionar.Location = new System.Drawing.Point(29, 314);
             this.btnAdicionar.Name = "btnAdicionar";
-            this.btnAdicionar.Size = new System.Drawing.Size(443, 50);
+            this.btnAdicionar.Size = new System.Drawing.Size(313, 50);
             this.btnAdicionar.TabIndex = 4;
             this.btnAdicionar.Text = "Adicionar";
             this.btnAdicionar.UseVisualStyleBackColor = true;
@@ -257,7 +257,7 @@
             // 
             this.btnCancelar.Location = new System.Drawing.Point(29, 482);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(443, 50);
+            this.btnCancelar.Size = new System.Drawing.Size(313, 50);
             this.btnCancelar.TabIndex = 4;
             this.btnCancelar.Text = "Cancelar Edição";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -267,7 +267,7 @@
             // 
             this.btnEliminar.Location = new System.Drawing.Point(29, 426);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(443, 50);
+            this.btnEliminar.Size = new System.Drawing.Size(313, 50);
             this.btnEliminar.TabIndex = 4;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -277,7 +277,7 @@
             // 
             this.btnGuardar.Location = new System.Drawing.Point(29, 370);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(443, 50);
+            this.btnGuardar.Size = new System.Drawing.Size(313, 50);
             this.btnGuardar.TabIndex = 4;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -296,7 +296,7 @@
             // 
             this.tbTelemovel.Location = new System.Drawing.Point(117, 154);
             this.tbTelemovel.Name = "tbTelemovel";
-            this.tbTelemovel.Size = new System.Drawing.Size(355, 26);
+            this.tbTelemovel.Size = new System.Drawing.Size(225, 26);
             this.tbTelemovel.TabIndex = 2;
             // 
             // label8
@@ -312,7 +312,7 @@
             // 
             this.tbEspecialidade.Location = new System.Drawing.Point(139, 282);
             this.tbEspecialidade.Name = "tbEspecialidade";
-            this.tbEspecialidade.Size = new System.Drawing.Size(333, 26);
+            this.tbEspecialidade.Size = new System.Drawing.Size(203, 26);
             this.tbEspecialidade.TabIndex = 2;
             // 
             // animadoresTableAdapter
@@ -327,7 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(887, 824);
+            this.ClientSize = new System.Drawing.Size(882, 579);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormGestãoAnimadores";
@@ -335,9 +335,9 @@
             this.Text = "Gestão Animadores";
             this.Load += new System.EventHandler(this.FormGestãoAnimadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.animadoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

@@ -24,10 +24,10 @@ namespace Bookids
 
             modelContainer = new ModelContainer();
 
-            carregarEscolas1();
-            clearTextBoxes1();
-            carregarEscolas();
-            clearTextBoxes();
+            carregarTipoProdutos();
+            clearTextBoxesTipoProdutos();
+            carregarProdutos();
+            clearTextBoxesProdutos();
         }
 
         private void FormGestãoEscolas_Load(object sender, EventArgs e)
@@ -41,18 +41,14 @@ namespace Bookids
             {
                 dataGridView1.CurrentRow.Selected = true;
 
-                int cod = Convert.ToInt32(this.dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                Produto produto = (Produto)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                var animador = (from _animador in modelContainer.Produtoes
-                                where _animador.CodProduto == cod
-                                select _animador).FirstOrDefault();
+                tbDesignação.Text = produto.Designação;
+                tbPreço.Text = produto.Preço.ToString();
+                nStock.Value = produto.StockExistente;
 
-                tbDesignação.Text = animador.Designação;
-                tbPreço.Text = animador.Preço.ToString();
-                nStock.Value = animador.StockExistente;
-
-                cbTipoProduto.SelectedValue = animador.TipoProdutoCodTipoProduto;
-                cbTipoProduto.Text = animador.TipoProduto.Tipo.ToString();
+                cbTipoProduto.SelectedValue = produto.TipoProdutoCodTipoProduto;
+                cbTipoProduto.Text = produto.TipoProduto.Tipo.ToString();
 
                 isEditing = true;
                 updateLayout();
@@ -65,13 +61,9 @@ namespace Bookids
             {
                 dataGridView2.CurrentRow.Selected = true;
 
-                int cod = Convert.ToInt32(this.dataGridView2.Rows[e.RowIndex].Cells[0].Value);
+                TipoProduto tipoProduto= (TipoProduto)dataGridView2.SelectedRows[0].DataBoundItem;
 
-                var animador = (from _animador in modelContainer.TipoProdutos
-                                where _animador.CodTipoProduto == cod
-                                select _animador).FirstOrDefault();
-
-                tbTipo.Text = animador.Tipo;
+                tbTipo.Text = tipoProduto.Tipo;
 
                 isEditing1 = true;
                 updateLayout1();
@@ -82,7 +74,7 @@ namespace Bookids
         {
             try
             {
-                Produto escola = new Produto
+                Produto produto = new Produto
                 {
                     Designação = tbDesignação.Text,
                     Preço = double.Parse(tbPreço.Text),
@@ -90,11 +82,11 @@ namespace Bookids
                     TipoProdutoCodTipoProduto = (int)cbTipoProduto.SelectedValue
                 };
 
-                modelContainer.Produtoes.Add(escola);
+                modelContainer.Produtoes.Add(produto);
                 modelContainer.SaveChanges();
-                carregarEscolas();
+                carregarProdutos();
 
-                clearTextBoxes();
+                clearTextBoxesProdutos();
             }
             catch (Exception ex)
             {
@@ -106,22 +98,22 @@ namespace Bookids
         {
             try
             {
-                Produto esc = (Produto)dataGridView1.SelectedRows[0].DataBoundItem;
+                Produto prod = (Produto)dataGridView1.SelectedRows[0].DataBoundItem;
 
  
-                var escola = (from escolas in modelContainer.Produtoes
-                              where escolas.CodProduto == esc.CodProduto
-                              select escolas).FirstOrDefault();
+                var produto = (from produtos in modelContainer.Produtoes
+                              where produtos.CodProduto == prod.CodProduto
+                              select produtos).FirstOrDefault();
 
-                escola.Designação = tbDesignação.Text;
-                escola.Preço = double.Parse(tbPreço.Text);
-                escola.StockExistente = (int)nStock.Value;
-                escola.TipoProdutoCodTipoProduto = (int)cbTipoProduto.SelectedValue;
+                produto.Designação = tbDesignação.Text;
+                produto.Preço = double.Parse(tbPreço.Text);
+                produto.StockExistente = (int)nStock.Value;
+                produto.TipoProdutoCodTipoProduto = (int)cbTipoProduto.SelectedValue;
 
                 modelContainer.SaveChanges();
-                carregarEscolas();
+                carregarProdutos();
 
-                clearTextBoxes();
+                clearTextBoxesProdutos();
             }
             catch (Exception ex)
             {
@@ -133,13 +125,13 @@ namespace Bookids
         {
             try
             {
-                Produto escola = (Produto)dataGridView1.SelectedRows[0].DataBoundItem;
+                Produto produto = (Produto)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                modelContainer.Produtoes.Remove(escola);
+                modelContainer.Produtoes.Remove(produto);
                 modelContainer.SaveChanges();
-                carregarEscolas();
+                carregarProdutos();
 
-                clearTextBoxes();
+                clearTextBoxesProdutos();
             }
             catch(Exception ex)
             {
@@ -149,26 +141,26 @@ namespace Bookids
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            clearTextBoxes();
+            clearTextBoxesProdutos();
         }
 
-        private void carregarEscolas()
+        private void carregarProdutos()
         {
-            var listaEscolas = from escola in modelContainer.Produtoes
-                               orderby escola.Designação
-                               select escola;
-            produtoBindingSource.DataSource = listaEscolas.ToList();
+            var listaProdutos = from produto in modelContainer.Produtoes
+                               orderby produto.Designação
+                               select produto;
+            produtoBindingSource.DataSource = listaProdutos.ToList();
 
             updateLayout();
         }
 
-        private void carregarEscolas1()
+        private void carregarTipoProdutos()
         {
-            var listaEscolas = from escola in modelContainer.TipoProdutos
-                               orderby escola.Tipo
-                               select escola;
-            tipoProdutosBindingSource.DataSource = listaEscolas.ToList();
-            tipoProdutosBindingSource1.DataSource = listaEscolas.ToList();
+            var listaTipos = from tipo in modelContainer.TipoProdutos
+                               orderby tipo.Tipo
+                               select tipo;
+            tipoProdutosBindingSource.DataSource = listaTipos.ToList();
+            tipoProdutosBindingSource1.DataSource = listaTipos.ToList();
 
             updateLayout1();
         }
@@ -181,7 +173,7 @@ namespace Bookids
             btnCancelar.Enabled = isEditing;
         }
 
-        private void clearTextBoxes()
+        private void clearTextBoxesProdutos()
         {
             tbDesignação.Text = "";
             tbPreço.Text = "";
@@ -201,7 +193,7 @@ namespace Bookids
             btnCancelar1.Enabled = isEditing1;
         }
 
-        private void clearTextBoxes1()
+        private void clearTextBoxesTipoProdutos()
         {
             tbTipo.Text = "";
             isEditing1 = false;
@@ -218,28 +210,28 @@ namespace Bookids
 
             modelContainer.TipoProdutos.Add(tipoProduto);
             modelContainer.SaveChanges();
-            carregarEscolas1();
+            carregarTipoProdutos();
 
-            clearTextBoxes1();
+            clearTextBoxesTipoProdutos();
         }
 
         private void BtnGuardar1_Click(object sender, EventArgs e)
         {
             try
             {
-                TipoProduto esc = (TipoProduto)dataGridView2.SelectedRows[0].DataBoundItem;
+                TipoProduto tp = (TipoProduto)dataGridView2.SelectedRows[0].DataBoundItem;
 
 
-                var tipo = (from escolas in modelContainer.TipoProdutos
-                              where escolas.CodTipoProduto == esc.CodTipoProduto
-                              select escolas).FirstOrDefault();
+                var tipo = (from tipos in modelContainer.TipoProdutos
+                              where tipos.CodTipoProduto == tp.CodTipoProduto
+                              select tipos).FirstOrDefault();
 
                 tipo.Tipo = tbTipo.Text;
 
                 modelContainer.SaveChanges();
-                carregarEscolas1();
+                carregarTipoProdutos();
 
-                clearTextBoxes1();
+                clearTextBoxesTipoProdutos();
             }
             catch (Exception ex)
             {
@@ -251,12 +243,10 @@ namespace Bookids
         {
             try
             {
-                TipoProduto escola = (TipoProduto)dataGridView2.SelectedRows[0].DataBoundItem;
-
-
+                TipoProduto tp = (TipoProduto)dataGridView2.SelectedRows[0].DataBoundItem;
 
                 var produto = from produtos in modelContainer.Produtoes
-                            where produtos.TipoProdutoCodTipoProduto == escola.CodTipoProduto
+                            where produtos.TipoProdutoCodTipoProduto == tp.CodTipoProduto
                             select produtos;
 
                 if (produto.Any())
@@ -265,13 +255,13 @@ namespace Bookids
                 }
                 else
                 {
-                    modelContainer.TipoProdutos.Remove(escola);
+                    modelContainer.TipoProdutos.Remove(tp);
                     modelContainer.SaveChanges();
                 }
 
-                carregarEscolas1();
+                carregarTipoProdutos();
 
-                clearTextBoxes1();
+                clearTextBoxesTipoProdutos();
             }
             catch (Exception ex)
             {
@@ -281,7 +271,7 @@ namespace Bookids
 
         private void BtnCancelar1_Click(object sender, EventArgs e)
         {
-            clearTextBoxes1();
+            clearTextBoxesTipoProdutos();
         }
     }
 }

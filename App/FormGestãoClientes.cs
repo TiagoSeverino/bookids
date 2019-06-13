@@ -21,18 +21,43 @@ namespace Bookids
         public FormGestãoClientes()
         {
             InitializeComponent();
+            InitColumn();
 
             modelContainer = new ModelContainer();
 
-            carregarEscolas();
-            clearTextBoxes();
-            carregarEscolas1();
-            clearTextBoxes1();
+            carregarClientes();
+            clearTextBoxesClientes();
+            carregarFilhos();
+            clearTextBoxesFilhos();
         }
 
         private void FormGestãoEscolas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void InitColumn()
+        {
+            System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeDataGridViewTextBoxColumn.Width = 150;
+
+            System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+            nomeDataGridViewTextBoxColumn1.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn1.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn1.MinimumWidth = 8;
+            nomeDataGridViewTextBoxColumn1.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn1.ReadOnly = true;
+            nomeDataGridViewTextBoxColumn1.Width = 150;
+
+            this.dataGridView1.Columns.Insert(0, nomeDataGridViewTextBoxColumn);
+            this.dataGridView2.Columns.Insert(0, nomeDataGridViewTextBoxColumn1);
         }
 
         private void DataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -41,24 +66,20 @@ namespace Bookids
             {
                 dataGridView1.CurrentRow.Selected = true;
 
-                int id = Convert.ToInt32(this.dataGridView1.Rows[e.RowIndex].Cells[0].Value);
+                Cliente cliente = (Cliente)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                var animador = (from _animador in modelContainer.Clientes
-                                where _animador.IdPessoa == id
-                                select _animador).FirstOrDefault();
-
-                tbNome.Text = animador.Nome;
-                tbMorada.Text = animador.Morada;
-                tbTelefone.Text = animador.Telefone;
-                tbTelemovel.Text = animador.Telemovel;
-                tbMail.Text = animador.Mail;
-                tbCodPostal.Text = animador.CodPostal;
-                tbLocalidade.Text = animador.Localidade;
-                tbOferta.Text = animador.ValorOferta.ToString();
-                tbNrCartao.Text = animador.NrCartao.ToString();
+                tbNome.Text = cliente.Nome;
+                tbMorada.Text = cliente.Morada;
+                tbTelefone.Text = cliente.Telefone;
+                tbTelemovel.Text = cliente.Telemovel;
+                tbMail.Text = cliente.Mail;
+                tbCodPostal.Text = cliente.CodPostal;
+                tbLocalidade.Text = cliente.Localidade;
+                tbOferta.Text = cliente.ValorOferta.ToString();
+                tbNrCartao.Text = cliente.NrCartao.ToString();
 
                 isEditing = true;
-                updateLayout();
+                updateLayoutCliente();
             }
         }
 
@@ -68,31 +89,21 @@ namespace Bookids
             {
                 dataGridView2.CurrentRow.Selected = true;
 
-                int id = Convert.ToInt32(this.dataGridView2.Rows[e.RowIndex].Cells[0].Value);
+                Filho filho = (Filho)dataGridView2.SelectedRows[0].DataBoundItem;
 
-                var escola = (from _animador in modelContainer.Filhos
-                                where _animador.IdPessoa == id
-                                select _animador).FirstOrDefault();
+                tbNomeFilho.Text = filho.Nome;
+                rMasculino.Checked = filho.Sexo == "Masculino";
+                rFeminino.Checked = filho.Sexo != "Masculino";
+                dateTimePicker1.Value = DateTime.Parse(filho.DataNascimento);
 
-                tbNome1.Text = escola.Nome;
-                tbMorada1.Text = escola.Morada;
-                tbTelefone1.Text = escola.Telefone;
-                tbTelemovel1.Text = escola.Telemovel;
-                tbMail1.Text = escola.Mail;
-                tbCodPostal1.Text = escola.CodPostal;
-                tbLocalidade1.Text = escola.Localidade;
-                rMasculino.Checked = escola.Sexo == "Masculino";
-                rFeminino.Checked = escola.Sexo != "Masculino";
-                dateTimePicker1.Value = DateTime.Parse(escola.DataNascimento);
+                comboBox1.SelectedValue = filho.ClienteIdPessoa;
+                comboBox1.Text = filho.Clientes.Nome;
 
-                comboBox1.SelectedValue = escola.ClienteIdPessoa;
-                comboBox1.Text = escola.Clientes.Nome;
-
-                comboBox2.SelectedValue = escola.EscolaIdEscola;
-                comboBox2.Text = escola.Escolas.Nome;
+                comboBox2.SelectedValue = filho.EscolaIdEscola;
+                comboBox2.Text = filho.Escolas.Nome;
 
                 isEditing1 = true;
-                updateLayout1();
+                updateLayoutFilho();
             }
         }
 
@@ -100,7 +111,7 @@ namespace Bookids
         {
             try
             {
-                Cliente escola = new Cliente
+                Cliente cliente = new Cliente
                 {
                     Nome = tbNome.Text,
                     Morada = tbMorada.Text,
@@ -113,11 +124,11 @@ namespace Bookids
                     NrCartao = int.Parse(tbNrCartao.Text)
                 };
 
-                modelContainer.Clientes.Add(escola);
+                modelContainer.Clientes.Add(cliente);
                 modelContainer.SaveChanges();
-                carregarEscolas();
+                carregarClientes();
 
-                clearTextBoxes();
+                clearTextBoxesClientes();
             }
             catch (Exception ex)
             {
@@ -129,27 +140,27 @@ namespace Bookids
         {
             try
             {
-                Cliente esc = (Cliente)dataGridView1.SelectedRows[0].DataBoundItem;
+                Cliente cl = (Cliente)dataGridView1.SelectedRows[0].DataBoundItem;
 
  
-                var escola = (from escolas in modelContainer.Clientes
-                              where escolas.IdPessoa == esc.IdPessoa
-                              select escolas).FirstOrDefault();
+                var cliente = (from clientes in modelContainer.Clientes
+                              where clientes.IdPessoa == cl.IdPessoa
+                              select clientes).FirstOrDefault();
 
-                escola.Nome = tbNome.Text;
-                escola.Morada = tbMorada.Text;
-                escola.Telefone = tbTelefone.Text;
-                escola.Telemovel = tbTelemovel.Text;
-                escola.Mail = tbMail.Text;
-                escola.CodPostal = tbCodPostal.Text;
-                escola.Localidade = tbLocalidade.Text;
-                escola.ValorOferta = double.Parse(tbOferta.Text);
-                escola.NrCartao = int.Parse(tbNrCartao.Text);
+                cliente.Nome = tbNome.Text;
+                cliente.Morada = tbMorada.Text;
+                cliente.Telefone = tbTelefone.Text;
+                cliente.Telemovel = tbTelemovel.Text;
+                cliente.Mail = tbMail.Text;
+                cliente.CodPostal = tbCodPostal.Text;
+                cliente.Localidade = tbLocalidade.Text;
+                cliente.ValorOferta = double.Parse(tbOferta.Text);
+                cliente.NrCartao = int.Parse(tbNrCartao.Text);
 
                 modelContainer.SaveChanges();
-                carregarEscolas();
+                carregarClientes();
 
-                clearTextBoxes();
+                clearTextBoxesClientes();
             }
             catch (Exception ex)
             {
@@ -161,25 +172,25 @@ namespace Bookids
         {
             try
             {
-                Cliente escola = (Cliente)dataGridView1.SelectedRows[0].DataBoundItem;
+                Cliente cliente = (Cliente)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                var produto = from produtos in modelContainer.Filhos
-                              where produtos.ClienteIdPessoa == escola.IdPessoa
-                              select produtos;
+                var filho = from filhos in modelContainer.Filhos
+                              where filhos.ClienteIdPessoa == cliente.IdPessoa
+                              select filhos;
 
-                if (produto.Any())
+                if (filho.Any())
                 {
                     MessageBox.Show("Este cliente tem um ou mais filhos registados", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    modelContainer.Clientes.Remove(escola);
+                    modelContainer.Clientes.Remove(cliente);
                     modelContainer.SaveChanges();
                 }
 
-                carregarEscolas();
+                carregarClientes();
 
-                clearTextBoxes();
+                clearTextBoxesClientes();
             }
             catch(Exception ex)
             {
@@ -189,35 +200,35 @@ namespace Bookids
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            clearTextBoxes();
+            clearTextBoxesClientes();
         }
 
-        private void carregarEscolas()
+        private void carregarClientes()
         {
-            var listaEscolas = from escola in modelContainer.Clientes
-                               orderby escola.Nome
-                               select escola;
-            pessoasClienteBindingSource.DataSource = listaEscolas.ToList();
+            var clientes = from cliente in modelContainer.Clientes
+                               orderby cliente.Nome
+                               select cliente;
+            pessoasClienteBindingSource.DataSource = clientes.ToList();
 
-            updateLayout();
+            updateLayoutCliente();
         }
 
-        private void carregarEscolas1()
+        private void carregarFilhos()
         {
-            var listaEscolas = from escola in modelContainer.Filhos
+            var filhos = from filho in modelContainer.Filhos
+                               orderby filho.Nome
+                               select filho;
+            pessoasFilhoBindingSource.DataSource = filhos.ToList();
+
+            var listaEscolas = from escola in modelContainer.Escolas
                                orderby escola.Nome
                                select escola;
-            pessoasFilhoBindingSource.DataSource = listaEscolas.ToList();
+            escolasBindingSource.DataSource = listaEscolas.ToList();
 
-            var listaEscolas1 = from escola in modelContainer.Escolas
-                               orderby escola.Nome
-                               select escola;
-            escolasBindingSource.DataSource = listaEscolas1.ToList();
-
-            updateLayout1();
+            updateLayoutFilho();
         }
 
-        private void updateLayout()
+        private void updateLayoutCliente()
         {
             btnAdicionar.Enabled = !isEditing;
             btnGuardar.Enabled = isEditing;
@@ -225,7 +236,7 @@ namespace Bookids
             btnCancelar.Enabled = isEditing;
         }
 
-        private void clearTextBoxes()
+        private void clearTextBoxesClientes()
         {
             tbNome.Text = "";
             tbMorada.Text = "";
@@ -239,10 +250,10 @@ namespace Bookids
 
             isEditing = false;
 
-            updateLayout();
+            updateLayoutCliente();
         }
 
-        private void updateLayout1()
+        private void updateLayoutFilho()
         {
             btnAdicionar1.Enabled = !isEditing1;
             btnGuardar1.Enabled = isEditing1;
@@ -250,15 +261,9 @@ namespace Bookids
             btnCancelar1.Enabled = isEditing1;
         }
 
-        private void clearTextBoxes1()
+        private void clearTextBoxesFilhos()
         {
-            tbNome1.Text = "";
-            tbMorada1.Text = "";
-            tbTelefone1.Text = "";
-            tbTelemovel1.Text = "";
-            tbMail1.Text = "";
-            tbCodPostal1.Text = "";
-            tbLocalidade1.Text = "";
+            tbNomeFilho.Text = "";
             rMasculino.Checked = true;
             rFeminino.Checked = false;
             dateTimePicker1.Value = DateTime.Now;
@@ -267,60 +272,60 @@ namespace Bookids
 
             isEditing1 = false;
 
-            updateLayout1();
+            updateLayoutFilho();
         }
 
         private void BtnAdicionar1_Click(object sender, EventArgs e)
         {
-            Filho tipoProduto = new Filho
+            Filho filho = new Filho
             {
-                Nome = tbNome1.Text,
-                Morada = tbMorada1.Text,
-                Telefone = tbTelefone1.Text,
-                Telemovel = tbTelemovel1.Text,
-                Mail = tbMail1.Text,
-                CodPostal = tbCodPostal1.Text,
-                Localidade = tbLocalidade1.Text,
+                Nome = tbNomeFilho.Text,
+                Morada = ((Cliente)comboBox1.SelectedItem).Morada,
+                Telefone = ((Cliente)comboBox1.SelectedItem).Telefone,
+                Telemovel = ((Cliente)comboBox1.SelectedItem).Telemovel,
+                Mail = ((Cliente)comboBox1.SelectedItem).Mail,
+                CodPostal = ((Cliente)comboBox1.SelectedItem).CodPostal,
+                Localidade = ((Cliente)comboBox1.SelectedItem).Localidade,
                 Sexo = rMasculino.Checked ? "Masculino" : "Femino",
                 DataNascimento = dateTimePicker1.Value.ToShortDateString(),
                 ClienteIdPessoa = (int)comboBox1.SelectedValue,
                 EscolaIdEscola = (int)comboBox2.SelectedValue
             };
 
-            modelContainer.Filhos.Add(tipoProduto);
+            modelContainer.Filhos.Add(filho);
             modelContainer.SaveChanges();
-            carregarEscolas1();
+            carregarFilhos();
 
-            clearTextBoxes1();
+            clearTextBoxesFilhos();
         }
 
         private void BtnGuardar1_Click(object sender, EventArgs e)
         {
             try
             {
-                Filho esc = (Filho)dataGridView2.SelectedRows[0].DataBoundItem;
+                Filho f = (Filho)dataGridView2.SelectedRows[0].DataBoundItem;
 
 
-                var escola = (from escolas in modelContainer.Filhos
-                              where escolas.IdPessoa == esc.IdPessoa
-                              select escolas).FirstOrDefault();
+                var filho = (from filhos in modelContainer.Filhos
+                              where filhos.IdPessoa == f.IdPessoa
+                              select filhos).FirstOrDefault();
 
-                escola.Nome = tbNome1.Text;
-                escola.Morada = tbMorada1.Text;
-                escola.Telefone = tbTelefone1.Text;
-                escola.Telemovel = tbTelemovel1.Text;
-                escola.Mail = tbMail1.Text;
-                escola.CodPostal = tbCodPostal1.Text;
-                escola.Localidade = tbLocalidade1.Text;
-                escola.Sexo = rMasculino.Checked ? "Masculino" : "Femino";
-                escola.DataNascimento = dateTimePicker1.Value.ToShortDateString();
-                escola.ClienteIdPessoa = (int)comboBox1.SelectedValue;
-                escola.EscolaIdEscola = (int)comboBox2.SelectedValue;
+                filho.Nome = tbNomeFilho.Text;
+                filho.Morada = ((Cliente)comboBox1.SelectedItem).Morada;
+                filho.Telefone = ((Cliente)comboBox1.SelectedItem).Telefone;
+                filho.Telemovel = ((Cliente)comboBox1.SelectedItem).Telemovel;
+                filho.Mail = ((Cliente)comboBox1.SelectedItem).Mail;
+                filho.CodPostal = ((Cliente)comboBox1.SelectedItem).CodPostal;
+                filho.Localidade = ((Cliente)comboBox1.SelectedItem).Localidade;
+                filho.Sexo = rMasculino.Checked ? "Masculino" : "Femino";
+                filho.DataNascimento = dateTimePicker1.Value.ToShortDateString();
+                filho.ClienteIdPessoa = (int)comboBox1.SelectedValue;
+                filho.EscolaIdEscola = (int)comboBox2.SelectedValue;
 
                 modelContainer.SaveChanges();
-                carregarEscolas1();
+                carregarFilhos();
 
-                clearTextBoxes1();
+                clearTextBoxesFilhos();
             }
             catch (Exception ex)
             {
@@ -332,20 +337,14 @@ namespace Bookids
         {
             try
             {
-                Filho escola = (Filho)dataGridView2.SelectedRows[0].DataBoundItem;
+                Filho f = (Filho)dataGridView2.SelectedRows[0].DataBoundItem;
 
-
-
-                var produto = from produtos in modelContainer.Filhos
-                            where produtos.IdPessoa == escola.IdPessoa
-                            select produtos;
-
-                modelContainer.Filhos.Remove(escola);
+                modelContainer.Filhos.Remove(f);
                 modelContainer.SaveChanges();
 
-                carregarEscolas1();
+                carregarFilhos();
 
-                clearTextBoxes1();
+                clearTextBoxesFilhos();
             }
             catch (Exception ex)
             {
@@ -355,7 +354,7 @@ namespace Bookids
 
         private void BtnCancelar1_Click(object sender, EventArgs e)
         {
-            clearTextBoxes1();
+            clearTextBoxesFilhos();
         }
     }
 }

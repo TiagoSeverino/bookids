@@ -20,11 +20,26 @@ namespace Bookids
         public FormGestãoAnimadores()
         {
             InitializeComponent();
+            InitColumn();
 
             modelContainer = new ModelContainer();
 
             carregarAnimadores();
             clearTextBoxes();
+        }
+
+        private void InitColumn()
+        {
+            System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+            nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            nomeDataGridViewTextBoxColumn.Width = 150;
+
+            this.dataGridView1.Columns.Insert(0, nomeDataGridViewTextBoxColumn);
         }
 
         private void FormGestãoAnimadores_Load(object sender, EventArgs e)
