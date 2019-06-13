@@ -19,11 +19,9 @@ namespace Bookids
 
         private void Bookids_Load(object sender, EventArgs e)
         {
-            /*
             FormLogin fLogin = new FormLogin();
             while(!fLogin.isLoggedin)
                 fLogin.ShowDialog();
-            */
         }
 
         private void BtnGestãoClientes_Click(object sender, EventArgs e)
