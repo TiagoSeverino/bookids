@@ -32,8 +32,9 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.especialidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idPessoaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.animadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pessoasAnimadorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new Bookids.DatabaseDataSet();
+            this.animadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbNome = new System.Windows.Forms.TextBox();
             this.tbMorada = new System.Windows.Forms.TextBox();
             this.tbTelefone = new System.Windows.Forms.TextBox();
@@ -58,8 +59,9 @@
             this.animadoresTableAdapter = new Bookids.DatabaseDataSetTableAdapters.EscolasTableAdapter();
             this.pessoas_AnimadorTableAdapter = new Bookids.DatabaseDataSetTableAdapters.Pessoas_AnimadorTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.animadoresBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.animadoresBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -101,15 +103,20 @@
             this.idPessoaDataGridViewTextBoxColumn.ReadOnly = true;
             this.idPessoaDataGridViewTextBoxColumn.Width = 150;
             // 
-            // animadoresBindingSource
+            // pessoasAnimadorBindingSource
             // 
-            this.animadoresBindingSource.DataMember = "Pessoas_Animador";
-            this.animadoresBindingSource.DataSource = this.databaseDataSet;
+            this.pessoasAnimadorBindingSource.DataMember = "Pessoas_Animador";
+            this.pessoasAnimadorBindingSource.DataSource = this.databaseDataSet;
             // 
             // databaseDataSet
             // 
             this.databaseDataSet.DataSetName = "DatabaseDataSet";
             this.databaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // animadoresBindingSource
+            // 
+            this.animadoresBindingSource.DataMember = "Pessoas_Animador";
+            this.animadoresBindingSource.DataSource = this.databaseDataSet;
             // 
             // tbNome
             // 
@@ -328,8 +335,9 @@
             this.Text = "Gestão Animadores";
             this.Load += new System.EventHandler(this.FormGestãoAnimadores_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.animadoresBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pessoasAnimadorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.animadoresBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -358,12 +366,13 @@
         private DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource animadoresBindingSource;
         private DatabaseDataSetTableAdapters.EscolasTableAdapter animadoresTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn especialidadeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idPessoaDataGridViewTextBoxColumn;
         private DatabaseDataSetTableAdapters.Pessoas_AnimadorTableAdapter pessoas_AnimadorTableAdapter;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox tbEspecialidade;
         private System.Windows.Forms.TextBox tbTelemovel;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn especialidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idPessoaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource pessoasAnimadorBindingSource;
     }
 }

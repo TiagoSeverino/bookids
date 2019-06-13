@@ -38,11 +38,7 @@ namespace Bookids
             {
                 dataGridView1.CurrentRow.Selected = true;
 
-                int id = Convert.ToInt32(this.dataGridView1.Rows[e.RowIndex].Cells[1].Value);
-
-                var animador = (from _animador in modelContainer.Animadores
-                                where _animador.IdPessoa == id
-                                select _animador).FirstOrDefault();
+                Animador animador= (Animador)dataGridView1.SelectedRows[0].DataBoundItem;
 
                 tbNome.Text = animador.Nome;
                 tbMorada.Text = animador.Morada;
@@ -135,9 +131,9 @@ namespace Bookids
 
         private void carregarAnimadores()
         {
-            var listaAnimadores = from escola in modelContainer.Animadores
-                               orderby escola.Nome
-                               select escola;
+            var listaAnimadores = from animador in modelContainer.Animadores
+                               orderby animador.Nome
+                               select animador;
             animadoresBindingSource.DataSource = listaAnimadores.ToList();
 
             updateLayout();

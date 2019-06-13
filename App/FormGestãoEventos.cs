@@ -29,8 +29,6 @@ namespace Bookids
 
         private void FormGestãoEventos_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'databaseDataSet.Eventoes' table. You can move, or remove it, as needed.
-            this.eventoesTableAdapter.Fill(this.databaseDataSet.Eventoes);
 
         }
 
@@ -40,16 +38,16 @@ namespace Bookids
             {
                 dataGridView1.CurrentRow.Selected = true;
 
-                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                Evento evento = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                tbDescrição.Text = row.Cells[1].Value.ToString();
-                tbLocal.Text = row.Cells[2].Value.ToString();
-                tbHora.Text = Convert.ToDateTime(row.Cells[3].Value.ToString()).ToShortTimeString();
-                dateTimePicker1.Value = Convert.ToDateTime(row.Cells[3].Value.ToString());
-                nmLimite.Value = Convert.ToInt32(row.Cells[4].Value.ToString());
-                nmInferior.Value = Convert.ToInt32(row.Cells[5].Value.ToString());
-                nmSuperior.Value = Convert.ToInt32(row.Cells[6].Value.ToString());
-                tbTipoEvento.Text = row.Cells[7].Value.ToString();
+                tbDescrição.Text = evento.Descrição;
+                tbLocal.Text = evento.Local;
+                tbHora.Text = evento.DataHora.ToShortTimeString();
+                dateTimePicker1.Value = evento.DataHora;
+                nmLimite.Value = evento.LimiteParticipações;
+                nmInferior.Value = evento.IdadeInferior;
+                nmSuperior.Value = evento.IdadeSuperior;
+                tbTipoEvento.Text = evento.TipoEvento;
 
                 isEditing = true;
                 updateLayout();
@@ -80,11 +78,11 @@ namespace Bookids
         {
             try
             {
-                Evento esc = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
+                Evento ev = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
 
  
                 var evento = (from eventos in modelContainer.Eventoes
-                              where eventos.NrEvento == esc.NrEvento
+                              where eventos.NrEvento == ev.NrEvento
                               select eventos).FirstOrDefault();
 
                 evento.Descrição = tbDescrição.Text;

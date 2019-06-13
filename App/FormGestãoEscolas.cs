@@ -21,10 +21,26 @@ namespace Bookids
         {
             InitializeComponent();
 
+            InitColumn();
+
             modelContainer = new ModelContainer();
 
             carregarEscolas();
             clearTextBoxes();
+        }
+
+        private void InitColumn()
+        {
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
+
+            this.dataGridView1.Columns.Insert(0, this.nomeDataGridViewTextBoxColumn);
         }
 
         private void FormGestãoEscolas_Load(object sender, EventArgs e)
@@ -106,11 +122,11 @@ namespace Bookids
             {
                 Escola escola = (Escola)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                var produto = from produtos in modelContainer.Filhos
+                var filhos = from produtos in modelContainer.Filhos
                               where produtos.EscolaIdEscola == escola.IdEscola
                               select produtos;
 
-                if (produto.Any())
+                if (filhos.Any())
                 {
                     MessageBox.Show("Esta escola tem um ou mais filhos registados", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
