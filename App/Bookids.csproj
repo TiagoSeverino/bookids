@@ -130,6 +130,12 @@
     <Compile Include="FormGestãoAnimadores.Designer.cs">
       <DependentUpon>FormGestãoAnimadores.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGestãoClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestãoClientes.Designer.cs">
+      <DependentUpon>FormGestãoClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestãoProdutos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -197,6 +203,9 @@
     </Compile>
     <EmbeddedResource Include="FormGestãoAnimadores.resx">
       <DependentUpon>FormGestãoAnimadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGestãoClientes.resx">
+      <DependentUpon>FormGestãoClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormGestãoProdutos.resx">
       <DependentUpon>FormGestãoProdutos.cs</DependentUpon>

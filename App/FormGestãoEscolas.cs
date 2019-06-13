@@ -106,8 +106,20 @@ namespace Bookids
             {
                 Escola escola = (Escola)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                modelContainer.Escolas.Remove(escola);
-                modelContainer.SaveChanges();
+                var produto = from produtos in modelContainer.Filhos
+                              where produtos.EscolaIdEscola == escola.IdEscola
+                              select produtos;
+
+                if (produto.Any())
+                {
+                    MessageBox.Show("Esta escola tem um ou mais filhos registados", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    modelContainer.Escolas.Remove(escola);
+                    modelContainer.SaveChanges();
+                }
+
                 carregarEscolas();
 
                 clearTextBoxes();

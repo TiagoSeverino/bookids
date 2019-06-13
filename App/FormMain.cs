@@ -28,7 +28,7 @@ namespace Bookids
 
         private void BtnGestãoClientes_Click(object sender, EventArgs e)
         {
-            //new FormGestãoClientes().ShowDialog();
+            new FormGestãoClientes().ShowDialog();
         }
 
         private void BtnGestãoEscolas_Click(object sender, EventArgs e)
