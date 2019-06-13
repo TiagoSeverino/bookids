@@ -30,13 +30,6 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.idEscolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.moradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codPostalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.localidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.escolasBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.databaseDataSet = new Bookids.DatabaseDataSet();
             this.tbNome = new System.Windows.Forms.TextBox();
@@ -57,6 +50,13 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.escolasTableAdapter = new Bookids.DatabaseDataSetTableAdapters.EscolasTableAdapter();
+            this.nomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.localidadeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.moradaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefoneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mailDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codPostalDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idEscolaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.escolasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -70,13 +70,13 @@
             this.dataGridView1.AutoGenerateColumns = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idEscolaDataGridViewTextBoxColumn,
             this.nomeDataGridViewTextBoxColumn,
+            this.localidadeDataGridViewTextBoxColumn,
             this.moradaDataGridViewTextBoxColumn,
             this.telefoneDataGridViewTextBoxColumn,
             this.mailDataGridViewTextBoxColumn,
             this.codPostalDataGridViewTextBoxColumn,
-            this.localidadeDataGridViewTextBoxColumn});
+            this.idEscolaDataGridViewTextBoxColumn});
             this.dataGridView1.DataSource = this.escolasBindingSource;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.MultiSelect = false;
@@ -84,72 +84,9 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1755, 800);
+            this.dataGridView1.Size = new System.Drawing.Size(528, 800);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
-            // 
-            // idEscolaDataGridViewTextBoxColumn
-            // 
-            this.idEscolaDataGridViewTextBoxColumn.DataPropertyName = "IdEscola";
-            this.idEscolaDataGridViewTextBoxColumn.HeaderText = "IdEscola";
-            this.idEscolaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.idEscolaDataGridViewTextBoxColumn.Name = "idEscolaDataGridViewTextBoxColumn";
-            this.idEscolaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idEscolaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // nomeDataGridViewTextBoxColumn
-            // 
-            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
-            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
-            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
-            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nomeDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // moradaDataGridViewTextBoxColumn
-            // 
-            this.moradaDataGridViewTextBoxColumn.DataPropertyName = "Morada";
-            this.moradaDataGridViewTextBoxColumn.HeaderText = "Morada";
-            this.moradaDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.moradaDataGridViewTextBoxColumn.Name = "moradaDataGridViewTextBoxColumn";
-            this.moradaDataGridViewTextBoxColumn.ReadOnly = true;
-            this.moradaDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // telefoneDataGridViewTextBoxColumn
-            // 
-            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
-            this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
-            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
-            this.telefoneDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // mailDataGridViewTextBoxColumn
-            // 
-            this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
-            this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
-            this.mailDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
-            this.mailDataGridViewTextBoxColumn.ReadOnly = true;
-            this.mailDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // codPostalDataGridViewTextBoxColumn
-            // 
-            this.codPostalDataGridViewTextBoxColumn.DataPropertyName = "CodPostal";
-            this.codPostalDataGridViewTextBoxColumn.HeaderText = "CodPostal";
-            this.codPostalDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.codPostalDataGridViewTextBoxColumn.Name = "codPostalDataGridViewTextBoxColumn";
-            this.codPostalDataGridViewTextBoxColumn.ReadOnly = true;
-            this.codPostalDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // localidadeDataGridViewTextBoxColumn
-            // 
-            this.localidadeDataGridViewTextBoxColumn.DataPropertyName = "Localidade";
-            this.localidadeDataGridViewTextBoxColumn.HeaderText = "Localidade";
-            this.localidadeDataGridViewTextBoxColumn.MinimumWidth = 8;
-            this.localidadeDataGridViewTextBoxColumn.Name = "localidadeDataGridViewTextBoxColumn";
-            this.localidadeDataGridViewTextBoxColumn.ReadOnly = true;
-            this.localidadeDataGridViewTextBoxColumn.Width = 150;
             // 
             // escolasBindingSource
             // 
@@ -259,8 +196,6 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox1.Controls.Add(this.btnAdicionar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEliminar);
@@ -277,7 +212,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbLocalidade);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(1773, 12);
+            this.groupBox1.Location = new System.Drawing.Point(546, 12);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(506, 486);
             this.groupBox1.TabIndex = 4;
@@ -328,11 +263,74 @@
             // 
             this.escolasTableAdapter.ClearBeforeFill = true;
             // 
+            // nomeDataGridViewTextBoxColumn
+            // 
+            this.nomeDataGridViewTextBoxColumn.DataPropertyName = "Nome";
+            this.nomeDataGridViewTextBoxColumn.HeaderText = "Nome";
+            this.nomeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.nomeDataGridViewTextBoxColumn.Name = "nomeDataGridViewTextBoxColumn";
+            this.nomeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nomeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // localidadeDataGridViewTextBoxColumn
+            // 
+            this.localidadeDataGridViewTextBoxColumn.DataPropertyName = "Localidade";
+            this.localidadeDataGridViewTextBoxColumn.HeaderText = "Localidade";
+            this.localidadeDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.localidadeDataGridViewTextBoxColumn.Name = "localidadeDataGridViewTextBoxColumn";
+            this.localidadeDataGridViewTextBoxColumn.ReadOnly = true;
+            this.localidadeDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // moradaDataGridViewTextBoxColumn
+            // 
+            this.moradaDataGridViewTextBoxColumn.DataPropertyName = "Morada";
+            this.moradaDataGridViewTextBoxColumn.HeaderText = "Morada";
+            this.moradaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.moradaDataGridViewTextBoxColumn.Name = "moradaDataGridViewTextBoxColumn";
+            this.moradaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.moradaDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // telefoneDataGridViewTextBoxColumn
+            // 
+            this.telefoneDataGridViewTextBoxColumn.DataPropertyName = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.HeaderText = "Telefone";
+            this.telefoneDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.telefoneDataGridViewTextBoxColumn.Name = "telefoneDataGridViewTextBoxColumn";
+            this.telefoneDataGridViewTextBoxColumn.ReadOnly = true;
+            this.telefoneDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // mailDataGridViewTextBoxColumn
+            // 
+            this.mailDataGridViewTextBoxColumn.DataPropertyName = "Mail";
+            this.mailDataGridViewTextBoxColumn.HeaderText = "Mail";
+            this.mailDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.mailDataGridViewTextBoxColumn.Name = "mailDataGridViewTextBoxColumn";
+            this.mailDataGridViewTextBoxColumn.ReadOnly = true;
+            this.mailDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // codPostalDataGridViewTextBoxColumn
+            // 
+            this.codPostalDataGridViewTextBoxColumn.DataPropertyName = "CodPostal";
+            this.codPostalDataGridViewTextBoxColumn.HeaderText = "CodPostal";
+            this.codPostalDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.codPostalDataGridViewTextBoxColumn.Name = "codPostalDataGridViewTextBoxColumn";
+            this.codPostalDataGridViewTextBoxColumn.ReadOnly = true;
+            this.codPostalDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // idEscolaDataGridViewTextBoxColumn
+            // 
+            this.idEscolaDataGridViewTextBoxColumn.DataPropertyName = "IdEscola";
+            this.idEscolaDataGridViewTextBoxColumn.HeaderText = "IdEscola";
+            this.idEscolaDataGridViewTextBoxColumn.MinimumWidth = 8;
+            this.idEscolaDataGridViewTextBoxColumn.Name = "idEscolaDataGridViewTextBoxColumn";
+            this.idEscolaDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idEscolaDataGridViewTextBoxColumn.Width = 150;
+            // 
             // FormGestãoEscolas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2291, 824);
+            this.ClientSize = new System.Drawing.Size(1066, 824);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormGestãoEscolas";
@@ -370,12 +368,12 @@
         private DatabaseDataSet databaseDataSet;
         private System.Windows.Forms.BindingSource escolasBindingSource;
         private DatabaseDataSetTableAdapters.EscolasTableAdapter escolasTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idEscolaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nomeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn localidadeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn moradaDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefoneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn mailDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn codPostalDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn localidadeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idEscolaDataGridViewTextBoxColumn;
     }
 }

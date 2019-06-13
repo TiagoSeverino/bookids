@@ -94,7 +94,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1896, 800);
+            this.dataGridView1.Size = new System.Drawing.Size(1253, 800);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -272,9 +272,9 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.tbTipoEvento);
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Location = new System.Drawing.Point(1914, 12);
+            this.groupBox1.Location = new System.Drawing.Point(1289, 23);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(489, 551);
+            this.groupBox1.Size = new System.Drawing.Size(574, 551);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eventos";
@@ -394,14 +394,14 @@
             // 
             this.eventoesTableAdapter.ClearBeforeFill = true;
             // 
-            // FormGestãoAnimadores
+            // FormGestãoEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2415, 824);
+            this.ClientSize = new System.Drawing.Size(2053, 824);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
-            this.Name = "FormGestãoAnimadores";
+            this.Name = "FormGestãoEventos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestão Eventos";
             this.Load += new System.EventHandler(this.FormGestãoEventos_Load);

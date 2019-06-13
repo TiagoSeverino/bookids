@@ -57,7 +57,7 @@
             // 
             // btnGestãoEventos
             // 
-            this.btnGestãoEventos.Location = new System.Drawing.Point(224, 12);
+            this.btnGestãoEventos.Location = new System.Drawing.Point(118, 118);
             this.btnGestãoEventos.Name = "btnGestãoEventos";
             this.btnGestãoEventos.Size = new System.Drawing.Size(100, 100);
             this.btnGestãoEventos.TabIndex = 0;
@@ -67,7 +67,7 @@
             // 
             // btnGestãoAnimadores
             // 
-            this.btnGestãoAnimadores.Location = new System.Drawing.Point(330, 12);
+            this.btnGestãoAnimadores.Location = new System.Drawing.Point(12, 118);
             this.btnGestãoAnimadores.Name = "btnGestãoAnimadores";
             this.btnGestãoAnimadores.Size = new System.Drawing.Size(100, 100);
             this.btnGestãoAnimadores.TabIndex = 0;
@@ -77,7 +77,7 @@
             // 
             // btnGestãoDeProdutos
             // 
-            this.btnGestãoDeProdutos.Location = new System.Drawing.Point(436, 12);
+            this.btnGestãoDeProdutos.Location = new System.Drawing.Point(224, 12);
             this.btnGestãoDeProdutos.Name = "btnGestãoDeProdutos";
             this.btnGestãoDeProdutos.Size = new System.Drawing.Size(100, 100);
             this.btnGestãoDeProdutos.TabIndex = 0;
@@ -89,7 +89,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(365, 238);
             this.Controls.Add(this.btnGestãoDeProdutos);
             this.Controls.Add(this.btnGestãoAnimadores);
             this.Controls.Add(this.btnGestãoEventos);

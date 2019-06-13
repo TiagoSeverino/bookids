@@ -38,14 +38,14 @@ namespace Bookids
             {
                 dataGridView1.CurrentRow.Selected = true;
 
-                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                Escola escola = (Escola)dataGridView1.SelectedRows[0].DataBoundItem;
 
-                tbNome.Text = row.Cells[1].Value.ToString();
-                tbMorada.Text = row.Cells[2].Value.ToString();
-                tbTelefone.Text = row.Cells[3].Value.ToString();
-                tbMail.Text = row.Cells[4].Value.ToString();
-                tbCodPostal.Text = row.Cells[5].Value.ToString();
-                tbLocalidade.Text = row.Cells[6].Value.ToString();
+                tbNome.Text = escola.Nome;
+                tbMorada.Text = escola.Morada;
+                tbTelefone.Text = escola.Telefone;
+                tbMail.Text = escola.Mail;
+                tbCodPostal.Text = escola.CodPostal;
+                tbLocalidade.Text = escola.Localidade;
 
                 isEditing = true;
                 updateLayout();
