@@ -406,12 +406,29 @@ namespace Bookids
                 int idEscola = (int)dataGridView3.SelectedRows[0].Cells[1].Value;
                 int nrEvento = (int)dataGridView3.SelectedRows[0].Cells[2].Value;
 
-                Participação colab = modelContainer.Participação.Where(x => x.EscolaIdEscola == idEscola && x.EventoNrEvento == nrEvento).FirstOrDefault();
-                modelContainer.Participação.Remove(colab);
-                modelContainer.SaveChanges();
+
+                var inscrição = from insc in modelContainer.Inscrição
+                              where insc.EventoNrEvento == nrEvento
+                              select insc;
+
+                if (inscrição.Any())
+                {
+                    MessageBox.Show("Esta escola ainda tem alunos inscritos!", "Erro ao apagar", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    Participação part = modelContainer.Participação.Where(x => x.EscolaIdEscola == idEscola && x.EventoNrEvento == nrEvento).FirstOrDefault();
+                    modelContainer.Participação.Remove(part);
+                    modelContainer.SaveChanges();
+                }
                 carregarEventos();
 
                 clearTextBoxes();
+
+
+
+
+                
             }
             catch (Exception)
             {
