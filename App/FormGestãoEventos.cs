@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
 
 namespace Bookids
 {
@@ -17,11 +18,18 @@ namespace Bookids
         ModelContainer modelContainer;
         bool isEditing = false;
 
+        SaveFileDialog saveFileDialog;
+
         public FormGestãoEventos()
         {
             InitializeComponent();
 
             modelContainer = new ModelContainer();
+            saveFileDialog = new SaveFileDialog()
+            {
+                Filter = "Ficheiro de Texto (*.txt)|*.txt",
+                RestoreDirectory = true
+            };
 
             carregarEventos();
             clearTextBoxes();
@@ -247,6 +255,7 @@ namespace Bookids
             btnGuardar.Enabled = isEditing;
             btnEliminar.Enabled = isEditing;
             btnCancelar.Enabled = isEditing;
+            btnListaInscrições.Enabled = isEditing;
 
             groupBox2.Enabled = isEditing;
             groupBox3.Enabled = isEditing;
@@ -425,10 +434,6 @@ namespace Bookids
 
                 clearTextBoxes();
 
-
-
-
-                
             }
             catch (Exception)
             {
@@ -479,6 +484,48 @@ namespace Bookids
             catch (Exception)
             {
 
+            }
+        }
+
+        private void BtnListaInscrições_Click(object sender, EventArgs e)
+        {
+            saveFileDialog.FileName = "Lista Inscrições.txt";
+            saveFileDialog.Title = "Guardar Lista de Inscrições";
+
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                if (!InputValid())
+                    return;
+
+                Evento ev = (Evento)dataGridView1.SelectedRows[0].DataBoundItem;
+
+                TextWriter tw = new StreamWriter(saveFileDialog.FileName);
+
+                tw.WriteLine("=============== EVENTO ===============");
+                tw.WriteLine("Descrição: " + tbDescrição.Text);
+                tw.WriteLine("Local: " + tbLocal.Text);
+                tw.WriteLine("Limite de Participações: " + (int)nmLimite.Value);
+                tw.WriteLine("Data: " + getDataHora(dateTimePicker1.Value, tbHora.Text).ToString());
+                tw.WriteLine("Idade Máxima: " + (int)nmSuperior.Value);
+                tw.WriteLine("Idade Minima: " + (int)nmInferior.Value);
+                tw.WriteLine("Tipo de Evento: " + tbTipoEvento.Text);
+                tw.WriteLine();
+                tw.WriteLine();
+                tw.WriteLine("============= INSCRIÇÔES =============");
+
+                var listaInscrições = from insc in modelContainer.Inscrição
+                                      where insc.EventoNrEvento == ev.NrEvento
+                                      select new { Nome = insc.Filhos.Nome, Idade = insc.Filhos.DataNascimento, NomeEscola = insc.Filhos.Escolas.Nome };
+
+                foreach(var pessoa in listaInscrições)
+                {
+                    tw.WriteLine("Nome: " + pessoa.Nome);
+                    tw.WriteLine("Idade: " + (DateTime.Now.Year - DateTime.Parse(pessoa.Idade).Year) );
+                    tw.WriteLine("Escola: " + pessoa.NomeEscola);
+                    tw.WriteLine("--------------------------------------");
+                }
+
+                tw.Close();
             }
         }
     }

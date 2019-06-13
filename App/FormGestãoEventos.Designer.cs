@@ -82,6 +82,7 @@
             this.btnAdicionarFilho = new System.Windows.Forms.Button();
             this.btnEliminarFilho = new System.Windows.Forms.Button();
             this.cbInscrições = new System.Windows.Forms.ComboBox();
+            this.btnListaInscrições = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.eventosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.databaseDataSet)).BeginInit();
@@ -121,7 +122,7 @@
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(695, 492);
+            this.dataGridView1.Size = new System.Drawing.Size(695, 572);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView1_CellContentClick);
             // 
@@ -209,14 +210,14 @@
             // 
             // tbDescrição
             // 
-            this.tbDescrição.Location = new System.Drawing.Point(117, 58);
+            this.tbDescrição.Location = new System.Drawing.Point(117, 83);
             this.tbDescrição.Name = "tbDescrição";
             this.tbDescrição.Size = new System.Drawing.Size(355, 26);
             this.tbDescrição.TabIndex = 1;
             // 
             // tbLocal
             // 
-            this.tbLocal.Location = new System.Drawing.Point(117, 90);
+            this.tbLocal.Location = new System.Drawing.Point(117, 115);
             this.tbLocal.Name = "tbLocal";
             this.tbLocal.Size = new System.Drawing.Size(355, 26);
             this.tbLocal.TabIndex = 2;
@@ -224,7 +225,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 61);
+            this.label1.Location = new System.Drawing.Point(25, 86);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 20);
             this.label1.TabIndex = 3;
@@ -233,7 +234,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 93);
+            this.label2.Location = new System.Drawing.Point(25, 118);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 20);
             this.label2.TabIndex = 3;
@@ -242,7 +243,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 125);
+            this.label3.Location = new System.Drawing.Point(25, 150);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 3;
@@ -251,7 +252,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(25, 160);
+            this.label4.Location = new System.Drawing.Point(25, 185);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(44, 20);
             this.label4.TabIndex = 3;
@@ -260,7 +261,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(25, 221);
+            this.label5.Location = new System.Drawing.Point(25, 246);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(104, 20);
             this.label5.TabIndex = 3;
@@ -269,7 +270,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(25, 253);
+            this.label6.Location = new System.Drawing.Point(25, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(114, 20);
             this.label6.TabIndex = 3;
@@ -282,6 +283,7 @@
             this.groupBox1.Controls.Add(this.nmLimite);
             this.groupBox1.Controls.Add(this.tbHora);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.btnListaInscrições);
             this.groupBox1.Controls.Add(this.btnAdicionar);
             this.groupBox1.Controls.Add(this.btnCancelar);
             this.groupBox1.Controls.Add(this.btnEliminar);
@@ -299,28 +301,28 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Location = new System.Drawing.Point(713, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(503, 492);
+            this.groupBox1.Size = new System.Drawing.Size(503, 572);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Eventos";
             // 
             // nmSuperior
             // 
-            this.nmSuperior.Location = new System.Drawing.Point(145, 251);
+            this.nmSuperior.Location = new System.Drawing.Point(145, 276);
             this.nmSuperior.Name = "nmSuperior";
             this.nmSuperior.Size = new System.Drawing.Size(327, 26);
             this.nmSuperior.TabIndex = 7;
             // 
             // nmInferior
             // 
-            this.nmInferior.Location = new System.Drawing.Point(135, 219);
+            this.nmInferior.Location = new System.Drawing.Point(135, 244);
             this.nmInferior.Name = "nmInferior";
             this.nmInferior.Size = new System.Drawing.Size(337, 26);
             this.nmInferior.TabIndex = 6;
             // 
             // nmLimite
             // 
-            this.nmLimite.Location = new System.Drawing.Point(181, 186);
+            this.nmLimite.Location = new System.Drawing.Point(181, 211);
             this.nmLimite.Maximum = new decimal(new int[] {
             1000,
             0,
@@ -332,7 +334,7 @@
             // 
             // tbHora
             // 
-            this.tbHora.Location = new System.Drawing.Point(117, 122);
+            this.tbHora.Location = new System.Drawing.Point(117, 147);
             this.tbHora.Mask = "00:00";
             this.tbHora.Name = "tbHora";
             this.tbHora.Size = new System.Drawing.Size(355, 26);
@@ -341,14 +343,14 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(117, 154);
+            this.dateTimePicker1.Location = new System.Drawing.Point(117, 179);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(355, 26);
             this.dateTimePicker1.TabIndex = 4;
             // 
             // btnAdicionar
             // 
-            this.btnAdicionar.Location = new System.Drawing.Point(29, 314);
+            this.btnAdicionar.Location = new System.Drawing.Point(29, 339);
             this.btnAdicionar.Name = "btnAdicionar";
             this.btnAdicionar.Size = new System.Drawing.Size(443, 35);
             this.btnAdicionar.TabIndex = 9;
@@ -358,7 +360,7 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(29, 437);
+            this.btnCancelar.Location = new System.Drawing.Point(29, 462);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(443, 35);
             this.btnCancelar.TabIndex = 12;
@@ -368,7 +370,7 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(29, 396);
+            this.btnEliminar.Location = new System.Drawing.Point(29, 421);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(443, 35);
             this.btnEliminar.TabIndex = 11;
@@ -378,7 +380,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(29, 355);
+            this.btnGuardar.Location = new System.Drawing.Point(29, 380);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(443, 35);
             this.btnGuardar.TabIndex = 10;
@@ -389,7 +391,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(25, 285);
+            this.label8.Location = new System.Drawing.Point(25, 310);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(93, 20);
             this.label8.TabIndex = 3;
@@ -398,7 +400,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(25, 189);
+            this.label7.Location = new System.Drawing.Point(25, 214);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(150, 20);
             this.label7.TabIndex = 3;
@@ -406,7 +408,7 @@
             // 
             // tbTipoEvento
             // 
-            this.tbTipoEvento.Location = new System.Drawing.Point(124, 282);
+            this.tbTipoEvento.Location = new System.Drawing.Point(124, 307);
             this.tbTipoEvento.Name = "tbTipoEvento";
             this.tbTipoEvento.Size = new System.Drawing.Size(348, 26);
             this.tbTipoEvento.TabIndex = 8;
@@ -425,9 +427,9 @@
             this.groupBox2.Controls.Add(this.btnAdicionarColaborador);
             this.groupBox2.Controls.Add(this.btnRemoverColaborador);
             this.groupBox2.Controls.Add(this.cbColaborações);
-            this.groupBox2.Location = new System.Drawing.Point(12, 510);
+            this.groupBox2.Location = new System.Drawing.Point(12, 593);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(393, 391);
+            this.groupBox2.Size = new System.Drawing.Size(393, 396);
             this.groupBox2.TabIndex = 5;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Colaborações";
@@ -495,9 +497,9 @@
             this.groupBox3.Controls.Add(this.btnAdicionarEscolas);
             this.groupBox3.Controls.Add(this.btnEleminarEscolas);
             this.groupBox3.Controls.Add(this.cbParticipações);
-            this.groupBox3.Location = new System.Drawing.Point(411, 510);
+            this.groupBox3.Location = new System.Drawing.Point(411, 593);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(393, 391);
+            this.groupBox3.Size = new System.Drawing.Size(393, 396);
             this.groupBox3.TabIndex = 5;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Participações";
@@ -547,9 +549,9 @@
             this.groupBox4.Controls.Add(this.btnAdicionarFilho);
             this.groupBox4.Controls.Add(this.btnEliminarFilho);
             this.groupBox4.Controls.Add(this.cbInscrições);
-            this.groupBox4.Location = new System.Drawing.Point(810, 510);
+            this.groupBox4.Location = new System.Drawing.Point(810, 593);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(406, 391);
+            this.groupBox4.Size = new System.Drawing.Size(406, 396);
             this.groupBox4.TabIndex = 5;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Inscrições";
@@ -593,11 +595,21 @@
             this.cbInscrições.Size = new System.Drawing.Size(381, 28);
             this.cbInscrições.TabIndex = 0;
             // 
+            // btnListaInscrições
+            // 
+            this.btnListaInscrições.Location = new System.Drawing.Point(29, 503);
+            this.btnListaInscrições.Name = "btnListaInscrições";
+            this.btnListaInscrições.Size = new System.Drawing.Size(443, 35);
+            this.btnListaInscrições.TabIndex = 9;
+            this.btnListaInscrições.Text = "Exportar lista de inscrições";
+            this.btnListaInscrições.UseVisualStyleBackColor = true;
+            this.btnListaInscrições.Click += new System.EventHandler(this.BtnListaInscrições_Click);
+            // 
             // FormGestãoEventos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1228, 913);
+            this.ClientSize = new System.Drawing.Size(1228, 1001);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
@@ -681,5 +693,6 @@
         private System.Windows.Forms.Button btnAdicionarFilho;
         private System.Windows.Forms.Button btnEliminarFilho;
         private System.Windows.Forms.ComboBox cbInscrições;
+        private System.Windows.Forms.Button btnListaInscrições;
     }
 }
