@@ -124,6 +124,12 @@
     <Compile Include="Filho.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <Compile Include="FormGestãoAnimadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGestãoAnimadores.Designer.cs">
+      <DependentUpon>FormGestãoAnimadores.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormGestãoEventos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -183,6 +189,9 @@
     <Compile Include="User.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormGestãoAnimadores.resx">
+      <DependentUpon>FormGestãoAnimadores.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormGestãoEventos.resx">
       <DependentUpon>FormGestãoEventos.cs</DependentUpon>
     </EmbeddedResource>

@@ -31,6 +31,7 @@
             this.btnGestãoClientes = new System.Windows.Forms.Button();
             this.btnGestãoEscolas = new System.Windows.Forms.Button();
             this.btnGestãoEventos = new System.Windows.Forms.Button();
+            this.btnGestãoAnimadores = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnGestãoClientes
@@ -63,11 +64,22 @@
             this.btnGestãoEventos.UseVisualStyleBackColor = true;
             this.btnGestãoEventos.Click += new System.EventHandler(this.BtnGestãoEventos_Click);
             // 
+            // btnGestãoAnimadores
+            // 
+            this.btnGestãoAnimadores.Location = new System.Drawing.Point(330, 12);
+            this.btnGestãoAnimadores.Name = "btnGestãoAnimadores";
+            this.btnGestãoAnimadores.Size = new System.Drawing.Size(100, 100);
+            this.btnGestãoAnimadores.TabIndex = 0;
+            this.btnGestãoAnimadores.Text = "Gestão de Animador";
+            this.btnGestãoAnimadores.UseVisualStyleBackColor = true;
+            this.btnGestãoAnimadores.Click += new System.EventHandler(this.BtnGestãoAnimadores_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.btnGestãoAnimadores);
             this.Controls.Add(this.btnGestãoEventos);
             this.Controls.Add(this.btnGestãoEscolas);
             this.Controls.Add(this.btnGestãoClientes);
@@ -84,5 +96,6 @@
         private System.Windows.Forms.Button btnGestãoClientes;
         private System.Windows.Forms.Button btnGestãoEscolas;
         private System.Windows.Forms.Button btnGestãoEventos;
+        private System.Windows.Forms.Button btnGestãoAnimadores;
     }
 }

@@ -26,6 +26,7 @@ namespace Bookids
         }
     
         public virtual DbSet<Pessoa> Pessoas { get; set; }
+        public virtual DbSet<Animador> Animadores{ get; set; }
         public virtual DbSet<Compra> Compras { get; set; }
         public virtual DbSet<DetalheCompra> DetalhesCompras { get; set; }
         public virtual DbSet<Produto> Produtoes { get; set; }
