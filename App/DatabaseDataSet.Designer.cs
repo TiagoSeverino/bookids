@@ -20,9 +20,9 @@ namespace Bookids {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dbDataSet")]
+    [global::System.Xml.Serialization.XmlRootAttribute("DatabaseDataSet")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dbDataSet : global::System.Data.DataSet {
+    public partial class DatabaseDataSet : global::System.Data.DataSet {
         
         private ColaboraçãoDataTable tableColaboração;
         
@@ -86,7 +86,7 @@ namespace Bookids {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public dbDataSet() {
+        public DatabaseDataSet() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -97,7 +97,7 @@ namespace Bookids {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected dbDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected DatabaseDataSet(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -352,7 +352,7 @@ namespace Bookids {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dbDataSet cln = ((dbDataSet)(base.Clone()));
+            DatabaseDataSet cln = ((DatabaseDataSet)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -556,9 +556,9 @@ namespace Bookids {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dbDataSet";
+            this.DataSetName = "DatabaseDataSet";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dbDataSet.xsd";
+            this.Namespace = "http://tempuri.org/DatabaseDataSet.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableColaboração = new ColaboraçãoDataTable();
@@ -746,7 +746,7 @@ namespace Bookids {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dbDataSet ds = new dbDataSet();
+            DatabaseDataSet ds = new DatabaseDataSet();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -1053,7 +1053,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1363,7 +1363,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -1658,7 +1658,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2016,7 +2016,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2386,7 +2386,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2681,7 +2681,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -2961,7 +2961,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3335,7 +3335,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3612,7 +3612,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -3903,7 +3903,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4232,7 +4232,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4558,7 +4558,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -4836,7 +4836,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -5130,7 +5130,7 @@ namespace Bookids {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dbDataSet ds = new dbDataSet();
+                DatabaseDataSet ds = new DatabaseDataSet();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -6833,7 +6833,7 @@ namespace Bookids {
         }
     }
 }
-namespace Bookids.dbDataSetTableAdapters {
+namespace Bookids.DatabaseDataSetTableAdapters {
     
     
     /// <summary>
@@ -6989,7 +6989,7 @@ SELECT AnimadorIdPessoa, EventoNrEvento FROM Colaboração WHERE (AnimadorIdPess
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7006,7 +7006,7 @@ SELECT AnimadorIdPessoa, EventoNrEvento FROM Colaboração WHERE (AnimadorIdPess
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.ColaboraçãoDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.ColaboraçãoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7019,9 +7019,9 @@ SELECT AnimadorIdPessoa, EventoNrEvento FROM Colaboração WHERE (AnimadorIdPess
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.ColaboraçãoDataTable GetData() {
+        public virtual DatabaseDataSet.ColaboraçãoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.ColaboraçãoDataTable dataTable = new dbDataSet.ColaboraçãoDataTable();
+            DatabaseDataSet.ColaboraçãoDataTable dataTable = new DatabaseDataSet.ColaboraçãoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7029,14 +7029,14 @@ SELECT AnimadorIdPessoa, EventoNrEvento FROM Colaboração WHERE (AnimadorIdPess
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.ColaboraçãoDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.ColaboraçãoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Colaboração");
         }
         
@@ -7299,7 +7299,7 @@ SELECT NrCompra, ClienteIdPessoa, Data, UtilizouCartão FROM Compras WHERE (NrCo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7316,7 +7316,7 @@ SELECT NrCompra, ClienteIdPessoa, Data, UtilizouCartão FROM Compras WHERE (NrCo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.ComprasDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.ComprasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7329,9 +7329,9 @@ SELECT NrCompra, ClienteIdPessoa, Data, UtilizouCartão FROM Compras WHERE (NrCo
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.ComprasDataTable GetData() {
+        public virtual DatabaseDataSet.ComprasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.ComprasDataTable dataTable = new dbDataSet.ComprasDataTable();
+            DatabaseDataSet.ComprasDataTable dataTable = new DatabaseDataSet.ComprasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7339,14 +7339,14 @@ SELECT NrCompra, ClienteIdPessoa, Data, UtilizouCartão FROM Compras WHERE (NrCo
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.ComprasDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.ComprasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Compras");
         }
         
@@ -7611,7 +7611,7 @@ SELECT Quantidade, ProdutoCodProduto, CompraNrCompra1 FROM DetalhesCompras WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7628,7 +7628,7 @@ SELECT Quantidade, ProdutoCodProduto, CompraNrCompra1 FROM DetalhesCompras WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.DetalhesComprasDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.DetalhesComprasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7641,9 +7641,9 @@ SELECT Quantidade, ProdutoCodProduto, CompraNrCompra1 FROM DetalhesCompras WHERE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.DetalhesComprasDataTable GetData() {
+        public virtual DatabaseDataSet.DetalhesComprasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.DetalhesComprasDataTable dataTable = new dbDataSet.DetalhesComprasDataTable();
+            DatabaseDataSet.DetalhesComprasDataTable dataTable = new DatabaseDataSet.DetalhesComprasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7651,14 +7651,14 @@ SELECT Quantidade, ProdutoCodProduto, CompraNrCompra1 FROM DetalhesCompras WHERE
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.DetalhesComprasDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.DetalhesComprasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "DetalhesCompras");
         }
         
@@ -7925,7 +7925,7 @@ SELECT IdEscola, Nome, Morada, Telefone, Mail, CodPostal, Localidade FROM Escola
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -7943,7 +7943,7 @@ SELECT IdEscola, Nome, Morada, Telefone, Mail, CodPostal, Localidade FROM Escola
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.EscolasDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.EscolasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -7956,9 +7956,9 @@ SELECT IdEscola, Nome, Morada, Telefone, Mail, CodPostal, Localidade FROM Escola
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.EscolasDataTable GetData() {
+        public virtual DatabaseDataSet.EscolasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.EscolasDataTable dataTable = new dbDataSet.EscolasDataTable();
+            DatabaseDataSet.EscolasDataTable dataTable = new DatabaseDataSet.EscolasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -7966,14 +7966,14 @@ SELECT IdEscola, Nome, Morada, Telefone, Mail, CodPostal, Localidade FROM Escola
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.EscolasDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.EscolasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Escolas");
         }
         
@@ -8314,7 +8314,7 @@ SELECT NrEvento, Descrição, Local, DataHora, LimiteParticipações, IdadeInfer
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8332,7 +8332,7 @@ SELECT NrEvento, Descrição, Local, DataHora, LimiteParticipações, IdadeInfer
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.EventoesDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.EventoesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8345,9 +8345,9 @@ SELECT NrEvento, Descrição, Local, DataHora, LimiteParticipações, IdadeInfer
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.EventoesDataTable GetData() {
+        public virtual DatabaseDataSet.EventoesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.EventoesDataTable dataTable = new dbDataSet.EventoesDataTable();
+            DatabaseDataSet.EventoesDataTable dataTable = new DatabaseDataSet.EventoesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8355,14 +8355,14 @@ SELECT NrEvento, Descrição, Local, DataHora, LimiteParticipações, IdadeInfer
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.EventoesDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.EventoesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Eventoes");
         }
         
@@ -8667,7 +8667,7 @@ SELECT Confirmada, FilhoIdPessoa, EventoNrEvento FROM Inscrição WHERE (EventoN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8684,7 +8684,7 @@ SELECT Confirmada, FilhoIdPessoa, EventoNrEvento FROM Inscrição WHERE (EventoN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.InscriçãoDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.InscriçãoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -8697,9 +8697,9 @@ SELECT Confirmada, FilhoIdPessoa, EventoNrEvento FROM Inscrição WHERE (EventoN
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.InscriçãoDataTable GetData() {
+        public virtual DatabaseDataSet.InscriçãoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.InscriçãoDataTable dataTable = new dbDataSet.InscriçãoDataTable();
+            DatabaseDataSet.InscriçãoDataTable dataTable = new DatabaseDataSet.InscriçãoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -8707,14 +8707,14 @@ SELECT Confirmada, FilhoIdPessoa, EventoNrEvento FROM Inscrição WHERE (EventoN
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.InscriçãoDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.InscriçãoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Inscrição");
         }
         
@@ -8972,7 +8972,7 @@ SELECT EscolaIdEscola, EventoNrEvento FROM Participação WHERE (EscolaIdEscola 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -8989,7 +8989,7 @@ SELECT EscolaIdEscola, EventoNrEvento FROM Participação WHERE (EscolaIdEscola 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.ParticipaçãoDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.ParticipaçãoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9002,9 +9002,9 @@ SELECT EscolaIdEscola, EventoNrEvento FROM Participação WHERE (EscolaIdEscola 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.ParticipaçãoDataTable GetData() {
+        public virtual DatabaseDataSet.ParticipaçãoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.ParticipaçãoDataTable dataTable = new dbDataSet.ParticipaçãoDataTable();
+            DatabaseDataSet.ParticipaçãoDataTable dataTable = new DatabaseDataSet.ParticipaçãoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9012,14 +9012,14 @@ SELECT EscolaIdEscola, EventoNrEvento FROM Participação WHERE (EscolaIdEscola 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.ParticipaçãoDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.ParticipaçãoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Participação");
         }
         
@@ -9285,7 +9285,7 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9303,7 +9303,7 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.PessoasDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.PessoasDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9316,9 +9316,9 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.PessoasDataTable GetData() {
+        public virtual DatabaseDataSet.PessoasDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.PessoasDataTable dataTable = new dbDataSet.PessoasDataTable();
+            DatabaseDataSet.PessoasDataTable dataTable = new DatabaseDataSet.PessoasDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9326,14 +9326,14 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.PessoasDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.PessoasDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Pessoas");
         }
         
@@ -9663,7 +9663,7 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9680,7 +9680,7 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.Pessoas_AnimadorDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.Pessoas_AnimadorDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -9693,9 +9693,9 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.Pessoas_AnimadorDataTable GetData() {
+        public virtual DatabaseDataSet.Pessoas_AnimadorDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.Pessoas_AnimadorDataTable dataTable = new dbDataSet.Pessoas_AnimadorDataTable();
+            DatabaseDataSet.Pessoas_AnimadorDataTable dataTable = new DatabaseDataSet.Pessoas_AnimadorDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9703,14 +9703,14 @@ SELECT IdPessoa, Nome, Morada, Localidade, CodPostal, Telefone, Telemovel, Mail 
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.Pessoas_AnimadorDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.Pessoas_AnimadorDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Pessoas_Animador");
         }
         
@@ -9976,7 +9976,7 @@ SELECT ValorOferta, NrCartao, IdPessoa FROM Pessoas_Cliente WHERE (IdPessoa = @I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9993,7 +9993,7 @@ SELECT ValorOferta, NrCartao, IdPessoa FROM Pessoas_Cliente WHERE (IdPessoa = @I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.Pessoas_ClienteDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.Pessoas_ClienteDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10006,9 +10006,9 @@ SELECT ValorOferta, NrCartao, IdPessoa FROM Pessoas_Cliente WHERE (IdPessoa = @I
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.Pessoas_ClienteDataTable GetData() {
+        public virtual DatabaseDataSet.Pessoas_ClienteDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.Pessoas_ClienteDataTable dataTable = new dbDataSet.Pessoas_ClienteDataTable();
+            DatabaseDataSet.Pessoas_ClienteDataTable dataTable = new DatabaseDataSet.Pessoas_ClienteDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10016,14 +10016,14 @@ SELECT ValorOferta, NrCartao, IdPessoa FROM Pessoas_Cliente WHERE (IdPessoa = @I
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.Pessoas_ClienteDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.Pessoas_ClienteDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Pessoas_Cliente");
         }
         
@@ -10291,7 +10291,7 @@ SELECT Sexo, DataNascimento, ClienteIdPessoa, EscolaIdEscola, IdPessoa FROM Pess
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10309,7 +10309,7 @@ SELECT Sexo, DataNascimento, ClienteIdPessoa, EscolaIdEscola, IdPessoa FROM Pess
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.Pessoas_FilhoDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.Pessoas_FilhoDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10322,9 +10322,9 @@ SELECT Sexo, DataNascimento, ClienteIdPessoa, EscolaIdEscola, IdPessoa FROM Pess
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.Pessoas_FilhoDataTable GetData() {
+        public virtual DatabaseDataSet.Pessoas_FilhoDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.Pessoas_FilhoDataTable dataTable = new dbDataSet.Pessoas_FilhoDataTable();
+            DatabaseDataSet.Pessoas_FilhoDataTable dataTable = new DatabaseDataSet.Pessoas_FilhoDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10332,14 +10332,14 @@ SELECT Sexo, DataNascimento, ClienteIdPessoa, EscolaIdEscola, IdPessoa FROM Pess
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.Pessoas_FilhoDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.Pessoas_FilhoDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Pessoas_Filho");
         }
         
@@ -10632,7 +10632,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10650,7 +10650,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.ProdutoesDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.ProdutoesDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10663,9 +10663,9 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.ProdutoesDataTable GetData() {
+        public virtual DatabaseDataSet.ProdutoesDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.ProdutoesDataTable dataTable = new dbDataSet.ProdutoesDataTable();
+            DatabaseDataSet.ProdutoesDataTable dataTable = new DatabaseDataSet.ProdutoesDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10673,14 +10673,14 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.ProdutoesDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.ProdutoesDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Produtoes");
         }
         
@@ -10949,7 +10949,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10966,7 +10966,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.TipoProdutosDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.TipoProdutosDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -10979,9 +10979,9 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.TipoProdutosDataTable GetData() {
+        public virtual DatabaseDataSet.TipoProdutosDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.TipoProdutosDataTable dataTable = new dbDataSet.TipoProdutosDataTable();
+            DatabaseDataSet.TipoProdutosDataTable dataTable = new DatabaseDataSet.TipoProdutosDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -10989,14 +10989,14 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.TipoProdutosDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.TipoProdutosDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "TipoProdutos");
         }
         
@@ -11254,7 +11254,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void InitConnection() {
             this._connection = new global::System.Data.SqlClient.SqlConnection();
-            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.dbConnectionString;
+            this._connection.ConnectionString = global::Bookids.Properties.Settings.Default.DatabaseConnectionString;
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11271,7 +11271,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(dbDataSet.UsersDataTable dataTable) {
+        public virtual int Fill(DatabaseDataSet.UsersDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -11284,9 +11284,9 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual dbDataSet.UsersDataTable GetData() {
+        public virtual DatabaseDataSet.UsersDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            dbDataSet.UsersDataTable dataTable = new dbDataSet.UsersDataTable();
+            DatabaseDataSet.UsersDataTable dataTable = new DatabaseDataSet.UsersDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -11294,14 +11294,14 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet.UsersDataTable dataTable) {
+        public virtual int Update(DatabaseDataSet.UsersDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(dbDataSet dataSet) {
+        public virtual int Update(DatabaseDataSet dataSet) {
             return this.Adapter.Update(dataSet, "Users");
         }
         
@@ -11809,7 +11809,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateUpdatedRows(dbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._pessoasTableAdapter != null)) {
                 global::System.Data.DataRow[] updatedRows = dataSet.Pessoas.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
@@ -11945,7 +11945,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateInsertedRows(dbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
             if ((this._pessoasTableAdapter != null)) {
                 global::System.Data.DataRow[] addedRows = dataSet.Pessoas.Select(null, null, global::System.Data.DataViewRowState.Added);
@@ -12067,7 +12067,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private int UpdateDeletedRows(dbDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(DatabaseDataSet dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
             if ((this._usersTableAdapter != null)) {
                 global::System.Data.DataRow[] deletedRows = dataSet.Users.Select(null, null, global::System.Data.DataViewRowState.Deleted);
@@ -12213,7 +12213,7 @@ SELECT CodProduto, Designação, Preço, StockExistente, TipoProdutoCodTipoProdu
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public virtual int UpdateAll(dbDataSet dataSet) {
+        public virtual int UpdateAll(DatabaseDataSet dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }

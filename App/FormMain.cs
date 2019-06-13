@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -13,33 +12,33 @@ namespace Bookids
 {
     public partial class FormMain : Form
     {
-
-        private ModelContainer modelContainer;
         public FormMain()
         {
             InitializeComponent();
-
-            modelContainer = new ModelContainer();
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
+        private void Bookids_Load(object sender, EventArgs e)
         {
-            
+            /*
+            FormLogin fLogin = new FormLogin();
+            while(!fLogin.isLoggedin)
+                fLogin.ShowDialog();
+            */
         }
 
-        private void BtnLogin_Click(object sender, EventArgs e)
+        private void BtnGestãoClientes_Click(object sender, EventArgs e)
         {
-            var test = from user in modelContainer.Users
-                        where user.Nome == tbNome.Text && user.Pass == tbPass.Text
-                       select user;
-            if (test.Any())
-            {
-                MessageBox.Show("Login Válido", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            }
-            else
-            {
-                MessageBox.Show("Login Invalido", "Conta não encontrada", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //new FormGestãoClientes().ShowDialog();
+        }
+
+        private void BtnGestãoEscolas_Click(object sender, EventArgs e)
+        {
+            new FormGestãoEscolas().ShowDialog();
+        }
+
+        private void BtnGestãoEventos_Click(object sender, EventArgs e)
+        {
+            new FormGestãoEventos().ShowDialog();
         }
     }
 }
